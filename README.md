@@ -24,6 +24,8 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 To use the aliases, the following definitions need to be added to your `.bashrc`, `.zshrc` or configuration file for whichever Unix shell being used.
 
+Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
+
 ```
 alias gg="gg-menu"
 alias gitc="gg-checkout"
@@ -49,3 +51,4 @@ alias gitup="git-upstream-push"
 | gg-merge-squash      | gitms     | Merge and squash a branch into the current branch        |
 | gg-delete            | gitd      | Force delete a branch                                    |
 | gg-upstream-push     | gitup     | Push the current branch to remote, setting the upstream  |
+| gg-push-tag          | gitpt     | Push a tag to a remote                                   |

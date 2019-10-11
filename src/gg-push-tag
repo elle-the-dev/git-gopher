@@ -1,0 +1,19 @@
+#!/bin/bash
+
+local_tags=$(bash -c "comm -23 <(git show-ref --tags | cut -d ' ' -f 2) <(git ls-remote --tags origin | cut -f 2)" | awk -F"/" '{print $3}')
+tag=$(echo "$local_tags" | fzf --preview="")
+
+if [ -z "$tag" ]; then
+    exit
+fi
+
+remotes=$(git remote -v | uniq)
+target=$(echo "$remotes" | grep push | fzf --preview="")
+
+if [ -z "$target" ]; then
+    exit
+fi
+
+remote=$(echo "$target" | awk '{print $1}')
+branch=$(git rev-parse --abbrev-ref HEAD)
+git push -u "$remote" "$tag"
