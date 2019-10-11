@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## git checkout tag
+target=$(gg-get-tag-name)
+if [ -n "$target" ]; then
+    read -p "New branch name: " branch_name
+    git checkout -b "$branch_name" $(awk '{print $2}' <<<"$target" )
+fi

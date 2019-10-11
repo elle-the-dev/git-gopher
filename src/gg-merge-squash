@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## git merge branch
+target=$(gg-get-branch-name)
+if [ -n "$target" ]; then
+    git merge --squash $(awk '{print $2}' <<<"$target" )
+fi

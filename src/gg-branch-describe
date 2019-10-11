@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -f
+for line in $(git --no-pager branch); do
+    description=$(git config branch.$line.description)
+
+    if [ "$line" != '*' ]; then
+        echo -e "$line\t\t\t\t$description"
+    fi
+done
