@@ -51,7 +51,7 @@ There are several commands added to make use of `fzf` and make interacting with 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
 | command                   | alias     | description                                              |
-| --------------------      | --------- | -------------------------------------------------------- |
+| ------------------------- | --------- | -------------------------------------------------------- |
 | gg-menu                   | gg        | Open menu with these and other commands                  |
 | gg-checkout-branch        | ggc       | Checkout a local branch                                  |
 | gg-checkout-branch-remote | ggcr      | Checkout a local or remote branch                        |
@@ -71,7 +71,7 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 
 If you want to add your own commands to the `gg-menu` command, created `~/.gg-options` with the options listed in it, one per line, with the command description separated by `|`.
 
-Note: Your command cannot contain 2 spaces back to back. The options are formatted using `column` and the two spaces are how the command column is delimited.
+Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
 
 ```
 git dosomething      | Description of my command
