@@ -24,9 +24,9 @@ An uninstall script is also provided to remove the symlinks
 sudo ./uninstall.sh
 ```
 
-To install manually, you can add the project directory to your `$PATH`
+To install manually, add the project directory to `$PATH`
 
-With or without the install script, to use the command aliases, the following definitions need to be added to your `.bashrc`, `.zshrc` or configuration file for whichever Unix shell being used.
+With or without the install script, to use the command aliases, the following definitions need to be added to `.bashrc`, `.zshrc` or whichever configuration file is appropriate for the Unix shell being used.
 
 ```
 alias gg="gg-menu"
@@ -69,7 +69,7 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 
 ## Custom Menu Options
 
-If you want to add your own commands to the `gg-menu` command, created `~/.gg-options` with the options listed in it, one per line, with the command description separated by `|`.
+Custom commands can be added to the `gg-menu` by creating `~/.gg-options` with the options listed in it, one per line, with the command description separated by `|`.
 
 Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
 
