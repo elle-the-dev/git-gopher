@@ -69,11 +69,11 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 
 ## Custom Menu Options
 
-If you want to add your own commands to the `gg-menu` command, created `~/.gg-options` with the options listed in it, one per line, with the command description separated by tabs.
+If you want to add your own commands to the `gg-menu` command, created `~/.gg-options` with the options listed in it, one per line, with the command description separated by `|`.
 
 Note: Your command cannot contain 2 spaces back to back. The options are formatted using `column` and the two spaces are how the command column is delimited.
 
 ```
-git dosomething 				Description of my command
-git dosomethingelse 			Description of my other command
+git dosomething      | Description of my command
+git dosomethingelse  | Description of my other command
 ```

@@ -11,7 +11,7 @@ else
 fi
 
 all_options=$(printf "$options\n$custom_options")
-target=$(echo "$all_options" | column -ts $'\t' | fzf --preview="")
+target=$(echo "$all_options" | column -ts '|' | fzf --preview="")
 
 if [ -n "$target" ]; then
     cmd=$(echo "$target" | awk -F"  " '{print $1}')
