@@ -1,7 +1,7 @@
-gg-checkout                         Checkout a local branch
-gg-checkout-all                     Checkout a local or remote branch
+gg-checkout-branch                  Checkout a local branch
+gg-checkout-branch-remote           Checkout a local or remote branch
 gg-checkout-tag                     Checkout a tag
-gg-merge                            Merge a branch into the current branch
+gg-merge-branch                     Merge a branch into the current branch
 gg-merge-tag                        Merge a tag into the current branch
 gg-merge-squash                     Merge and squash a branch into the current branch
 gg-upstream-push                    Push the current branch to remote, setting the upstream

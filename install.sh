@@ -6,16 +6,16 @@ create_symlink () {
     DIR=`dirname $SCRIPT`
 
     if [ ! -f "/usr/local/bin/$1" ]; then
-        ln -s "$DIR/$1" "/usr/local/bin/$1"
+        ln -s "$DIR/src/$1" "/usr/local/bin/$1"
     fi
 }
 
 create_symlink gg-menu
-create_symlink gg-checkout
-create_symlink gg-checkout-all
+create_symlink gg-checkout-branch
+create_symlink gg-checkout-branch-remote
 create_symlink gg-checkout-tag
 create_symlink gg-branch-tag
-create_symlink gg-merge
+create_symlink gg-merge-branch
 create_symlink gg-merge-tag
 create_symlink gg-merge-squash
 create_symlink gg-upstream-push
