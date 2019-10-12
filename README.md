@@ -66,3 +66,14 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 | gg-delete-tag-remote      | ggdtr     | Delete a tag both locally and on remote                  |
 | gg-upstream-push          | ggup      | Push the current branch to remote, setting the upstream  |
 | gg-push-tag               | ggpt      | Push a tag to a remote                                   |
+
+## Custom Menu Options
+
+If you want to add your own commands to the `gg-menu` command, created `~/.gg-options` with the options listed in it, one per line, with the command description separated by tabs.
+
+Note: Your command cannot contain 2 spaces back to back. The options are formatted using `column` and the two spaces are how the command column is delimited.
+
+```
+git dosomething 				Description of my command
+git dosomethingelse 			Description of my other command
+```

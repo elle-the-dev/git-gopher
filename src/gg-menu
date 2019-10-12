@@ -3,8 +3,17 @@
 SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 options=$(cat "$DIR/.gg-options")
-target=$(echo "$options" | fzf --preview="")
+
+if [ -f ~/.gg-options ]; then
+    custom_options=$(cat ~/.gg-options)
+else
+    custom_options=""
+fi
+
+all_options=$(printf "$options\n$custom_options")
+target=$(echo "$all_options" | column -ts $'\t' | fzf --preview="")
 
 if [ -n "$target" ]; then
-    bash -c $(echo "$target" | awk '{print $1}')
+    cmd=$(echo "$target" | awk -F"  " '{print $1}')
+    bash -c "$cmd"
 fi
