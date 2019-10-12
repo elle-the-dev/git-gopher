@@ -2,7 +2,7 @@
 
 Improving the Git CLI experience with fzf
 
-![image](https://i.imgur.com/oeupneT.gif)
+![image](https://i.imgur.com/ApSMolC.gif)
 
 ## Requirements
 
