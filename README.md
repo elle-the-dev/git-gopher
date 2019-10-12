@@ -52,7 +52,7 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 
 | command                   | alias     | description                                              |
 | --------------------      | --------- | -------------------------------------------------------- |
-| gg-menu                   | gg        | Open menu with these commands                            |
+| gg-menu                   | gg        | Open menu with these and other commands                  |
 | gg-checkout-branch        | ggc       | Checkout a local branch                                  |
 | gg-checkout-branch-remote | ggcr      | Checkout a local or remote branch                        |
 | gg-checkout-tag           | ggct      | Checkout a tag                                           |
