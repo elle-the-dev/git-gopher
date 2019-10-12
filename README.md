@@ -2,6 +2,8 @@
 
 Improving the Git CLI experience with fzf
 
+![image](https://i.imgur.com/fHq6AZa.gif)
+
 ## Requirements
 
 [git](https://github.com/git/git) and [fzf](https://github.com/junegunn/fzf) must be installed.
