@@ -1,4 +1,4 @@
-# Git Gud
+# git-gud
 
 Improving the Git CLI experience with fzf
 
