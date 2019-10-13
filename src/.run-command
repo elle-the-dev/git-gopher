@@ -1,6 +1,8 @@
 #!/bin/bash
 
 run_command () {
-    echo "$1" >> ~/.config/git-gud/history
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    working_dir=$(pwd)
+    echo "$1    # $branch $working_dir" >> ~/.config/git-gud/history
     bash -c "$1"
 }
