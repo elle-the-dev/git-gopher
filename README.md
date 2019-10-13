@@ -24,15 +24,21 @@ To automatically configure, run
 sudo ./install.sh
 ```
 
-which will symlink the commands to `/usr/local/bin`
+which will symlink the commands to `/usr/local/bin` and create `~/.config/git-gud`
 
-An uninstall script is also provided to remove the symlinks
+To use a different install directory, pass it as the first argument to the command
+
+```
+sudo ./install ~/.local/bin
+```
+
+An uninstall script is also provided to remove the symlinks. If a custom install path was provided, it will have been saved to `~/.config/git-gud/install-dir` and use that. Uninstalling will also delete `~/.config/git-gud`
 
 ```
 sudo ./uninstall.sh
 ```
 
-To install manually, add the project directory to `$PATH`
+To install manually without a script, add the project directory to `$PATH` and create `~/.config/git-gud`
 
 With or without the install script, to use the command aliases, the following definitions need to be added to `.bashrc`, `.zshrc` or whichever configuration file is appropriate for the Unix shell being used.
 
