@@ -4,6 +4,14 @@ Improving the Git CLI experience with fzf
 
 ![image](https://i.imgur.com/1tWisyl.gif)
 
+## What is this?
+
+Rather than needing to remember the exact name of the branch, tag or remote, or the exact syntax of the different git commands needed, **git-gud** will provide a list to choose from.
+
+By using `fzf` for these lists, finding and choosing which item can be done by fuzzy searching the text.
+
+And unlike the git GUIs out there, **git-gud** will say exactly what it's doing by displaying the command it will run before the selection is made.
+
 ## Requirements
 
 [git](https://github.com/git/git) and [fzf](https://github.com/junegunn/fzf) must be installed.
@@ -44,7 +52,27 @@ alias ggdf="gg-delete-branch-force"
 alias ggdt="gg-delete-tag"
 alias ggdtr="gg-delete-tag-remote"
 ```
+
 ## Usage
+
+**gid-gud** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
+
+### Menu
+
+The `gg-menu` command (alias `gg`) will bring up a fzf list of all the commands that git-gud provides, as well as additional standard git commands.
+
+![image](https://i.imgur.com/enbjTFo.png)
+
+Custom commands can be added to menu by creating `~/.gg-options` with the options listed in it, one per line, with the command and description separated by `|`.
+
+Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
+
+```
+git dosomething      | Description of my command
+git dosomethingelse  | Description of my other command
+```
+
+### Individual commands
 
 There are several commands added to make use of `fzf` and make interacting with basic git commands faster and easier.
 
@@ -66,14 +94,3 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 | gg-delete-tag-remote      | ggdtr     | Delete a tag both locally and on remote                  |
 | gg-upstream-push          | ggup      | Push the current branch to remote, setting the upstream  |
 | gg-push-tag               | ggpt      | Push a tag to a remote                                   |
-
-## Custom Menu Options
-
-Custom commands can be added to the `gg-menu` by creating `~/.gg-options` with the options listed in it, one per line, with the command description separated by `|`.
-
-Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
-
-```
-git dosomething      | Description of my command
-git dosomethingelse  | Description of my other command
-```
