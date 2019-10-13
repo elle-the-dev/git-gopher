@@ -40,3 +40,5 @@ create_symlink gg-delete-branch
 create_symlink gg-delete-branch-force
 create_symlink gg-delete-tag
 create_symlink gg-delete-tag-remote
+create_symlink gg-reset
+create_symlink gg-reset-hard
