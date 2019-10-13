@@ -1,7 +1,12 @@
 #!/bin/bash
 
 ## git delete local branch with -D
+
+SCRIPT=`realpath $0`
+DIR=`dirname $SCRIPT`
+source "$DIR/.run-command"
+
 target=$(gg-get-branch-name "" 'echo "git branch -D {2}"')
 if [ -n "$target" ]; then
-    git branch -D $(awk '{print $2}' <<<"$target" )
+    run_command "git branch -D $(awk '{print $2}' <<<$target )"
 fi

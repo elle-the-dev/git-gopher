@@ -1,0 +1,6 @@
+#!/bin/bash
+
+run_command () {
+    echo "$1" >> ~/.config/git-gud/history
+    bash -c "$1"
+}
