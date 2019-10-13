@@ -1,8 +1,18 @@
 #!/bin/bash
 
+CUSTOM_INSTALL_DIR="$1"
+
 remove_symlink () {
-    if test -h "/usr/local/bin/$1"; then
-        rm "/usr/local/bin/$1"
+    if [ -n "$CUSTOM_INSTALL_DIR" ]; then
+        DIR=$(realpath "$CUSTOM_INSTALL_DIR")
+    elif [ -f ~/.config/git-gud/install-dir ]; then
+        DIR=$(cat ~/.config/git-gud/install-dir)
+    else
+        DIR="/usr/local/bin"
+    fi
+
+    if test -h "$DIR/$1"; then
+        rm "$DIR/$1"
     fi
 }
 
@@ -22,3 +32,7 @@ remove_symlink gg-delete-branch
 remove_symlink gg-delete-branch-force
 remove_symlink gg-delete-tag
 remove_symlink gg-delete-tag-remote
+
+if [ -d ~/.config/git-gud ]; then
+    rm -rf ~/.config/git-gud
+fi
