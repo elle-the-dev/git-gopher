@@ -57,6 +57,8 @@ alias ggd="gg-delete-branch"
 alias ggdf="gg-delete-branch-force"
 alias ggdt="gg-delete-tag"
 alias ggdtr="gg-delete-tag-remote"
+alias ggrs="gg-reset"
+alias ggrsh="gg-reset-hard"
 ```
 
 ## Usage
@@ -100,3 +102,5 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 | gg-delete-tag-remote      | ggdtr     | Delete a tag both locally and on remote                  |
 | gg-upstream-push          | ggup      | Push the current branch to remote, setting the upstream  |
 | gg-push-tag               | ggpt      | Push a tag to a remote                                   |
+| gg-reset                  | ggrs      | Unstage changes after the selected commit                |
+| gg-reset-hard             | ggrsh     | Revert to the selected commit, discarding changes        |
