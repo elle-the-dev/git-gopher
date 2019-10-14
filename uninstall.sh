@@ -25,8 +25,6 @@ remove_symlink gg-merge-branch
 remove_symlink gg-merge-tag
 remove_symlink gg-merge-squash
 remove_symlink gg-upstream-push
-remove_symlink gg-get-branch-name
-remove_symlink gg-get-tag-name
 remove_symlink gg-push-tag
 remove_symlink gg-delete-branch
 remove_symlink gg-delete-branch-force
@@ -34,6 +32,13 @@ remove_symlink gg-delete-tag
 remove_symlink gg-delete-tag-remote
 remove_symlink gg-reset
 remove_symlink gg-reset-hard
+remove_symlink gg-diff-commits
+remove_symlink gg-difftool-commits
+remove_symlink gg-difftool-commits-dir-diff
+
+remove_symlink gg-get-branch-name
+remove_symlink gg-get-tag-name
+remove_symlink gg-get-commit-hash
 
 if [ -d ~/.config/git-gud ]; then
     rm -rf ~/.config/git-gud
