@@ -67,6 +67,8 @@ alias ggrs="gg-reset"
 alias ggrsh="gg-reset-hard"
 ```
 
+**The aliases will apply to the next time the terminal is opened**
+
 ## Usage
 
 **gid-gud** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
