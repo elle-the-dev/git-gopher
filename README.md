@@ -65,6 +65,9 @@ alias ggdt="gg-delete-tag"
 alias ggdtr="gg-delete-tag-remote"
 alias ggrs="gg-reset"
 alias ggrsh="gg-reset-hard"
+alias ggdi="gg-diff-commits"
+alias ggdit="gg-difftool-commits"
+alias ggdd="gg-difftool-commits-dir-diff"
 ```
 
 ## Usage
@@ -92,21 +95,24 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
-| command                   | alias     | description                                              |
-| ------------------------- | --------- | -------------------------------------------------------- |
-| gg-menu                   | gg        | Open menu with these and other commands                  |
-| gg-checkout-branch        | ggc       | Checkout a local branch                                  |
-| gg-checkout-branch-remote | ggcr      | Checkout a local or remote branch                        |
-| gg-checkout-tag           | ggct      | Checkout a tag                                           |
-| gg-branch-tag             | ggbt      | Create and checkout a new branch from a tag              |
-| gg-merge-branch           | ggm       | Merge a branch into the current branch                   |
-| gg-merge-tag              | ggmt      | Merge a tag into the current branch                      |
-| gg-merge-squash           | ggms      | Merge and squash a branch into the current branch        |
-| gg-delete-branch          | ggd       | Delete a branch                                          |
-| gg-delete-branch-force    | ggdf      | Force delete a branch                                    |
-| gg-delete-tag             | ggdt      | Delete a tag locally                                     |
-| gg-delete-tag-remote      | ggdtr     | Delete a tag both locally and on remote                  |
-| gg-upstream-push          | ggup      | Push the current branch to remote, setting the upstream  |
-| gg-push-tag               | ggpt      | Push a tag to a remote                                   |
-| gg-reset                  | ggrs      | Unstage changes after the selected commit                |
-| gg-reset-hard             | ggrsh     | Revert to the selected commit, discarding changes        |
+| command                      | alias     | description                                                |
+| ---------------------------- | --------- | ---------------------------------------------------------- |
+| gg-menu                      | gg        | Open menu with these and other commands                    |
+| gg-checkout-branch           | ggc       | Checkout a local branch                                    |
+| gg-checkout-branch-remote    | ggcr      | Checkout a local or remote branch                          |
+| gg-checkout-tag              | ggct      | Checkout a tag                                             |
+| gg-branch-tag                | ggbt      | Create and checkout a new branch from a tag                |
+| gg-merge-branch              | ggm       | Merge a branch into the current branch                     |
+| gg-merge-tag                 | ggmt      | Merge a tag into the current branch                        |
+| gg-merge-squash              | ggms      | Merge and squash a branch into the current branch          |
+| gg-delete-branch             | ggd       | Delete a branch                                            |
+| gg-delete-branch-force       | ggdf      | Force delete a branch                                      |
+| gg-delete-tag                | ggdt      | Delete a tag locally                                       |
+| gg-delete-tag-remote         | ggdtr     | Delete a tag both locally and on remote                    |
+| gg-upstream-push             | ggup      | Push the current branch to remote, setting the upstream    |
+| gg-push-tag                  | ggpt      | Push a tag to a remote                                     |
+| gg-reset                     | ggrs      | Unstage changes after the selected commit                  |
+| gg-reset-hard                | ggrsh     | Revert to the selected commit, discarding changes          |
+| gg-diff-commits              | ggdi      | Select two commits and show the changes between them       |
+| gg-difftool-commits          | ggdit     | Select two commits and show the changes using difftool     |
+| gg-difftool-commits-dir-diff | ggdd      | Select two commits and show the changed files by directory |
