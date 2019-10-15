@@ -1,4 +1,0 @@
-#!/bin/bash
-
-## git push --u github [branch]
-git push -u github $(git rev-parse --abbrev-ref HEAD)

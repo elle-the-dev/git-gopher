@@ -1,19 +1,17 @@
 #!/bin/bash
 
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-source "$DIR/.run-command"
+diff-commits () {
+    commit1=$(get-commit-hash 'echo "First of two commits to compare"')
 
-commit1=$(get-commit-hash 'echo "First of two commits to compare"')
+    if [ -z "$commit1" ]; then
+        exit
+    fi
 
-if [ -z "$commit1" ]; then
-    exit
-fi
+    commit2=$(get-commit-hash "echo \"git diff $commit1 {1}\"")
 
-commit2=$(get-commit-hash "echo \"git diff $commit1 {1}\"")
+    if [ -z "$commit2" ]; then
+        exit
+    fi
 
-if [ -z "$commit2" ]; then
-    exit
-fi
-
-run_command "git diff $commit1 $commit2"
+    run-command "git diff $commit1 $commit2"
+}

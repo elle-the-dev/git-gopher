@@ -2,11 +2,9 @@
 
 ## git checkout local branch
 
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-source "$DIR/.run-command"
-
-target=$(get-branch-name "" 'echo "git checkout {2}"')
-if [ -n "$target" ]; then
-    run_command "git checkout $(awk '{print $2}' <<<$target )"
-fi
+checkout-branch () {
+    target=$(get-branch-name "" 'echo "git checkout {2}"')
+    if [ -n "$target" ]; then
+        run-command "git checkout $(awk '{print $2}' <<<$target )"
+    fi
+}

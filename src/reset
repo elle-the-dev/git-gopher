@@ -1,8 +1,6 @@
 #!/bin/bash
 
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-source "$DIR/.run-command"
-
-hash=$(get-commit-hash)
-run_command "git reset $hash"
+reset () {
+    hash=$(get-commit-hash)
+    run-command "git reset $hash"
+}

@@ -2,12 +2,10 @@
 
 ## git checkout tag
 
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-source "$DIR/.run-command"
-
-target=$(get-tag-name "" 'echo "git checkout -b {2} \[branch_name\]"')
-if [ -n "$target" ]; then
-    read -p "New branch name: " branch_name
-    run_command "git checkout -b \"$branch_name\" $(awk '{print $2}' <<<$target )"
-fi
+branch-tag () {
+    target=$(get-tag-name "" 'echo "git checkout -b {2} \[branch_name\]"')
+    if [ -n "$target" ]; then
+        read -p "New branch name: " branch_name
+        run-command "git checkout -b \"$branch_name\" $(awk '{print $2}' <<<$target )"
+    fi
+}

@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# get full path to the real script directory
+# need this to reliably import scripts
 SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
-options=$(cat "$DIR/.gg-options")
 
+# shortcuts to be run as, for example
+# $ gud c
 declare -A cmds
-
 cmds['c']="checkout-branch"
 cmds['cr']="checkout-branch-remote"
 cmds['ct']="checkout-tag"
@@ -25,10 +27,27 @@ cmds['di']="diff-commits"
 cmds['dit']="difftool-commits"
 cmds['dd']="difftool-commits-dir-diff"
 
+# common functions used in commands
+source "$DIR/_run-command"
+source "$DIR/_get-branch-name"
+source "$DIR/_get-tag-name"
+source "$DIR/_get-commit-hash"
+
 if [ -v cmds[$1] ]; then
+    # a short cut was used
+    # $ gud c
     source "$DIR/${cmds[$1]}"
+    ${cmds[$1]}
 elif [ -f "$DIR/$1" ]; then
+    # long-form of the command passed through
+    # $ gud checkout-branch
     source "$DIR/$1"
+    $1
 else
+    # either no command was passed, or an invalid one was
+
+    # load menu options
+    options=$(cat "$DIR/.gud-options")
     source "$DIR/menu"
+    menu
 fi
