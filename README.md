@@ -93,6 +93,7 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 | gud push-tag                  | gud pt  | Push a tag to a remote                                     |
 | gud reset                     | gud rs  | Unstage changes after the selected commit                  |
 | gud reset-hard                | gud rsh | Revert to the selected commit, discarding changes          |
+| gud cherry-pick               | gud cp  | Merge specific commits into the current branch             |
 | gud diff-commits              | gud di  | Select two commits and show the changes between them       |
 | gud difftool-commits          | gud dit | Select two commits and show the changes using difftool     |
 | gud difftool-commits-dir-diff | gud dd  | Select two commits and show the changed files by directory |
