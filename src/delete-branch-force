@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## git delete local branch with -D
+
+delete-branch-force () {
+    target=$(get-branch-name "" 'echo "git branch -D {2}"')
+    if [ -n "$target" ]; then
+        run-command "git branch -D $(awk '{print $2}' <<<$target )"
+    fi
+}

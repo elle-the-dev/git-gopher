@@ -1,0 +1,8 @@
+#!/bin/bash
+
+reset-hard () {
+    log_entries=$(git log --pretty=oneline)
+    log_entry=$(echo "$log_entries" | fzf --preview='echo "git reset --hard {1}"' --preview-window down:5)
+    hash=$(echo "$log_entry" | awk '{print $1}')
+    run-command "git reset $hash"
+}

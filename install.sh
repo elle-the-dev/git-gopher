@@ -8,42 +8,28 @@ create_symlink () {
     DIR=`dirname $SCRIPT`
 
     if [ -n "$CUSTOM_INSTALL_DIR" ]; then
+        # if a custom install directory was provided, symlink to there
         INSTALL_DIR=$(realpath "$CUSTOM_INSTALL_DIR")
 
+        # only create the config directory if it doesn't exist
         if [ ! -d ~/.config/git-gud ]; then
             mkdir ~/.config/git-gud
         fi
 
+        # save the install directory for uninstall
         echo "$INSTALL_DIR" > ~/.config/git-gud/install-dir
     else
+        # default installation directory if none provided
         INSTALL_DIR="/usr/local/bin"
     fi
 
+    # do not overwrite existing file in install directory
     if [ ! -f "$INSTALL_DIR/$1" ]; then
         ln -s "$DIR/src/$1" "$INSTALL_DIR/$1"
+        echo "Created $INSTALL_DIR/$1"
+    else
+        echo "$INSTALL_DIR/$1 already exists"
     fi
 }
 
-create_symlink gg-menu
-create_symlink gg-checkout-branch
-create_symlink gg-checkout-branch-remote
-create_symlink gg-checkout-tag
-create_symlink gg-branch-tag
-create_symlink gg-merge-branch
-create_symlink gg-merge-tag
-create_symlink gg-merge-squash
-create_symlink gg-upstream-push
-create_symlink gg-push-tag
-create_symlink gg-delete-branch
-create_symlink gg-delete-branch-force
-create_symlink gg-delete-tag
-create_symlink gg-delete-tag-remote
-create_symlink gg-reset
-create_symlink gg-reset-hard
-create_symlink gg-diff-commits
-create_symlink gg-difftool-commits
-create_symlink gg-difftool-commits-dir-diff
-
-create_symlink gg-get-branch-name
-create_symlink gg-get-tag-name
-create_symlink gg-get-commit-hash
+create_symlink gud

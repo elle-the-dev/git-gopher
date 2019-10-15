@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## git merge branch
+
+merge-squash () {
+    target=$(get-branch-name "" 'echo "git merge --squash {2}"')
+    if [ -n "$target" ]; then
+        run-command "git merge --squash $(awk '{print $2}' <<<$target )"
+    fi
+}

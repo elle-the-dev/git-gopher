@@ -1,0 +1,20 @@
+#!/bin/bash
+
+push-tag () {
+    local_tags=$(bash -c "comm -23 <(git show-ref --tags | cut -d ' ' -f 2) <(git ls-remote --tags | cut -f 2)" | awk -F"/" '{print $3}')
+    tag=$(echo "$local_tags" | fzf --preview='echo "Select a tag. No action is taken until selecting a remote."' --preview-window down:5)
+
+    if [ -z "$tag" ]; then
+        exit
+    fi
+
+    remotes=$(git remote -v | uniq)
+    target=$(echo "$remotes" | grep push | fzf --preview="echo \"git push -u {1} \"$tag\"\"" --preview-window down:5)
+
+    if [ -z "$target" ]; then
+        exit
+    fi
+
+    remote=$(echo "$target" | awk '{print $1}')
+    run-command "git push -u $remote $tag"
+}
