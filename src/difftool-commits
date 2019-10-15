@@ -4,13 +4,13 @@ SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 source "$DIR/.run-command"
 
-commit1=$(gg-get-commit-hash 'echo "First of two commits to compare"')
+commit1=$(get-commit-hash 'echo "First of two commits to compare"')
 
 if [ -z "$commit1" ]; then
     exit
 fi
 
-commit2=$(gg-get-commit-hash "echo \"git difftool $commit1 {1}\"")
+commit2=$(get-commit-hash "echo \"git difftool $commit1 {1}\"")
 
 if [ -z "$commit2" ]; then
     exit

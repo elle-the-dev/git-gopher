@@ -6,7 +6,7 @@ SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 source "$DIR/.run-command"
 
-target=$(gg-get-branch-name "" 'echo "git merge --squash {2}"')
+target=$(get-branch-name "" 'echo "git merge --squash {2}"')
 if [ -n "$target" ]; then
     run_command "git merge --squash $(awk '{print $2}' <<<$target )"
 fi

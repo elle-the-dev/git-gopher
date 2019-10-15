@@ -6,7 +6,7 @@ SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 source "$DIR/.run-command"
 
-target=$(gg-get-tag-name "" 'echo "git merge {2}"')
+target=$(get-tag-name "" 'echo "git merge {2}"')
 if [ -n "$target" ]; then
     run_command "git merge $(awk '{print $2}' <<<$target )"
 fi

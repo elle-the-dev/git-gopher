@@ -6,7 +6,7 @@ SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 source "$DIR/.run-command"
 
-target=$(gg-get-branch-name "" 'echo "git branch -D {2}"')
+target=$(get-branch-name "" 'echo "git branch -d {2}"')
 if [ -n "$target" ]; then
-    run_command "git branch -D $(awk '{print $2}' <<<$target )"
+    run_command "git branch -d $(awk '{print $2}' <<<$target )"
 fi

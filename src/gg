@@ -1,0 +1,34 @@
+#!/bin/bash
+
+SCRIPT=`realpath $0`
+DIR=`dirname $SCRIPT`
+options=$(cat "$DIR/.gg-options")
+
+declare -A cmds
+
+cmds['c']="checkout-branch"
+cmds['cr']="checkout-branch-remote"
+cmds['ct']="checkout-tag"
+cmds['bt']="branch-tag"
+cmds['m']="merge-branch"
+cmds['mt']="merge-tag"
+cmds['ms']="merge-squash"
+cmds['up']="upstream-push"
+cmds['pt']="push-tag"
+cmds['d']="delete-branch"
+cmds['df']="delete-branch-force"
+cmds['dt']="delete-tag"
+cmds['dtr']="delete-tag-remote"
+cmds['rs']="reset"
+cmds['rsh']="reset-hard"
+cmds['di']="diff-commits"
+cmds['dit']="difftool-commits"
+cmds['dd']="difftool-commits-dir-diff"
+
+if [ -v cmds[$1] ]; then
+    source "$DIR/${cmds[$1]}"
+elif [ -f "$DIR/$1" ]; then
+    source "$DIR/$1"
+else
+    source "$DIR/menu"
+fi
