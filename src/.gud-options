@@ -13,6 +13,7 @@ gud delete-tag                    | Delete a tag locally
 gud delete-tag-remote             | Delete a tag both locally and on remote
 gud reset                         | Unstage changes after the selected commit
 gud reset-hard                    | Revert to the selected commit, discarding changes
+gud cherry-pick                   | Merge specific commits into the current branch
 git commit -a                     | Commit all changes
 git log                           | Show the commit history
 git status                        | Show current branch details
