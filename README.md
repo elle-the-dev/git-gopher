@@ -75,25 +75,31 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
-| command                       | alias   | description                                                |
-| ----------------------------- | --------| ---------------------------------------------------------- |
-| gud menu                      | gud     | Open menu with these and other commands                    |
-| gud checkout-branch           | gud c   | Checkout a local branch                                    |
-| gud checkout-branch-remote    | gud cr  | Checkout a local or remote branch                          |
-| gud checkout-tag              | gud ct  | Checkout a tag                                             |
-| gud branch-tag                | gud bt  | Create and checkout a new branch from a tag                |
-| gud merge-branch              | gud m   | Merge a branch into the current branch                     |
-| gud merge-tag                 | gud mt  | Merge a tag into the current branch                        |
-| gud merge-squash              | gud ms  | Merge and squash a branch into the current branch          |
-| gud delete-branch             | gud d   | Delete a branch                                            |
-| gud delete-branch-force       | gud df  | Force delete a branch                                      |
-| gud delete-tag                | gud dt  | Delete a tag locally                                       |
-| gud delete-tag-remote         | gud dtr | Delete a tag both locally and on remote                    |
-| gud upstream-push             | gud up  | Push the current branch to remote, setting the upstream    |
-| gud push-tag                  | gud pt  | Push a tag to a remote                                     |
-| gud reset                     | gud rs  | Unstage changes after the selected commit                  |
-| gud reset-hard                | gud rsh | Revert to the selected commit, discarding changes          |
-| gud cherry-pick               | gud cp  | Merge specific commits into the current branch             |
-| gud diff-commits              | gud di  | Select two commits and show the changes between them       |
-| gud difftool-commits          | gud dit | Select two commits and show the changes using difftool     |
-| gud difftool-commits-dir-diff | gud dd  | Select two commits and show the changed files by directory |
+Run any command or alias by passing it to the `gud` command
+
+```
+gud [command|alias]
+```
+
+| command                    | alias | description                                                |
+| -------------------------- | ----- | ---------------------------------------------------------- |
+| menu                       |       | Open menu with these and other commands                    |
+| checkout-branch            | c     | Checkout a local branch                                    |
+| checkout-branch-remote     | cr    | Checkout a local or remote branch                          |
+| checkout-tag               | ct    | Checkout a tag                                             |
+| branch-tag                 | bt    | Create and checkout a new branch from a tag                |
+| merge-branch               | m     | Merge a branch into the current branch                     |
+| merge-tag                  | mt    | Merge a tag into the current branch                        |
+| merge-squash               | ms    | Merge and squash a branch into the current branch          |
+| delete-branch              | d     | Delete a branch                                            |
+| delete-branch-force        | df    | Force delete a branch                                      |
+| delete-tag                 | dt    | Delete a tag locally                                       |
+| delete-tag-remote          | dtr   | Delete a tag both locally and on remote                    |
+| upstream-push              | up    | Push the current branch to remote, setting the upstream    |
+| push-tag                   | pt    | Push a tag to a remote                                     |
+| reset                      | rs    | Unstage changes after the selected commit                  |
+| reset-hard                 | rsh   | Revert to the selected commit, discarding changes          |
+| cherry-pick                | cp    | Merge specific commits into the current branch             |
+| diff-commits               | di    | Select two commits and show the changes between them       |
+| difftool-commits           | dit   | Select two commits and show the changes using difftool     |
+| difftool-commits-dir-diff  | dd    | Select two commits and show the changed files by directory |
