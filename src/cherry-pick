@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cherry-pick () {
+    hash=$(get-commit-hash)
+    run-command "git cherry-pick -e $hash"
+}
