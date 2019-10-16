@@ -1,29 +1,29 @@
-gud checkout-branch               | Checkout a local branch
-gud checkout-branch-remote        | Checkout a local or remote branch
-gud checkout-tag                  | Checkout a tag
-gud branch-tag                    | Create a new branch from a tag
-gud merge-branch                  | Merge a branch into the current branch
-gud merge-tag                     | Merge a tag into the current branch
-gud merge-squash                  | Merge and squash a branch into the current branch
-gud upstream-push                 | Push the current branch to remote, setting the upstream
-gud push-tag                      | Push a tag to remote
-gud delete-branch                 | Delete a branch
-gud delete-branch-force           | Force delete a branch
-gud delete-tag                    | Delete a tag locally
-gud delete-tag-remote             | Delete a tag both locally and on remote
-gud reset                         | Unstage changes after the selected commit
-gud reset-hard                    | Revert to the selected commit, discarding changes
-gud cherry-pick                   | Merge specific commits into the current branch
-gud diff-commits                  | Select two commits and show the changes between them
-gud difftool-commits              | Select two commits and show the changes using difftool
-gud difftool-commits-dir-diff     | Select two commits and show the changed files by directory
-gud history                       | Show the history of commands run
-gud history-dir                   | Show the history of commands run in the current working directory
-git commit -a                     | Commit all changes
-git log                           | Show the commit history
-git status                        | Show current branch details
-git rebase -i                     | Interactive rebase
-git difftool --dir-diff           | Open all changes in difftool
-diff --name-only --diff-filter=U  | Show a list of filenames with conflicts
-git mergetool                     | Open conflicts in mergetool
-git branch --edit-description     | Edit branch description
+gud checkout-branch                   | Checkout a local branch
+gud checkout-branch-remote            | Checkout a local or remote branch
+gud checkout-tag                      | Checkout a tag
+gud branch-tag                        | Create a new branch from a tag
+gud merge-branch                      | Merge a branch into the current branch
+gud merge-tag                         | Merge a tag into the current branch
+gud merge-squash                      | Merge and squash a branch into the current branch
+gud upstream-push                     | Push the current branch to remote, setting the upstream
+gud push-tag                          | Push a tag to remote
+gud delete-branch                     | Delete a branch
+gud delete-branch-force               | Force delete a branch
+gud delete-tag                        | Delete a tag locally
+gud delete-tag-remote                 | Delete a tag both locally and on remote
+gud reset                             | Unstage changes after the selected commit
+gud reset-hard                        | Revert to the selected commit, discarding changes
+gud cherry-pick                       | Merge specific commits into the current branch
+gud diff-commits                      | Select two commits and show the changes between them
+gud difftool-commits                  | Select two commits and show the changes using difftool
+gud difftool-commits-dir-diff         | Select two commits and show the changed files by directory
+gud history                           | Show the history of commands run
+gud history-dir                       | Show the history of commands run in the current working directory
+git commit -a                         | Commit all changes
+git log                               | Show the commit history
+git status                            | Show current branch details
+git rebase -i                         | Interactive rebase
+git difftool --dir-diff               | Open all changes in difftool
+git diff --name-only --diff-filter=U  | Show a list of filenames with conflicts
+git mergetool                         | Open conflicts in mergetool
+git branch --edit-description         | Edit branch description
