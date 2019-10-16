@@ -1,7 +1,7 @@
 #!/bin/bash
 
 get-stash-ref () {
-    preview="echo {1} | awk -F':' '{print \$1}' | git stash show -p"
+    preview="echo {1} | awk -F':' '{print \$1}' | xargs git stash show -p"
     stashes=$(git stash list)
 
     if [ -x $(command -v bat) ]; then
