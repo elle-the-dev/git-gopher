@@ -5,6 +5,6 @@
 merge-branch () {
     target=$(get-branch-name "" 'echo "git merge {2}"')
     if [ -n "$target" ]; then
-        run-command "git merge $(awk '{print $2}' <<<$target )"
+        run-command "git merge $target"
     fi
 }
