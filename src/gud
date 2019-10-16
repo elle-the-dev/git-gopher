@@ -27,6 +27,8 @@ cmds['cp']="cherry-pick"
 cmds['di']="diff-commits"
 cmds['dit']="difftool-commits"
 cmds['dd']="difftool-commits-dir-diff"
+cmds['h']="history"
+cmds['hd']="history-dir"
 
 # common functions used in commands
 source "$DIR/_run-command"
