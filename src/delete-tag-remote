@@ -1,8 +1,7 @@
 #!/bin/bash
 
 delete-tag-remote () {
-    tags=$(git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}' | tac) || exit
-    tag=$(echo "$tags" | fzf --ansi --preview='echo "Select a tag. No action is taken until selecting a remote."' --preview-window down:5)
+    tag=$(get-tag-name "" "echo 'No action is taken until selecting a remote.'")
 
     if [ -z "$tag" ]; then
         exit
