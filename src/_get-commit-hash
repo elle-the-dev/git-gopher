@@ -2,8 +2,8 @@
 
 get-commit-hash () {
     preview=$1
-    log_entries=$(git log --pretty=format:'%h|%ad|%an|%d %Creset%s' --date=relative | column -ts '|')
-    log_entry=$(echo "$log_entries" | fzf --preview="eval $preview" --preview-window down:5)
+    log_entries=$(git log --color=always --pretty=format:'%C(blue)%h%C(reset)|%ad|%an|%C(yellow)%d %C(reset)%s' --date=relative | column -ts '|')
+    log_entry=$(echo "$log_entries" | fzf --ansi --preview="eval $preview" --preview-window down:5)
     hash=$(echo "$log_entry" | awk '{print $1}')
     echo "$hash"
 }

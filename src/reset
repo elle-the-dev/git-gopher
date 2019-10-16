@@ -2,5 +2,8 @@
 
 reset () {
     hash=$(get-commit-hash)
-    run-command "git reset $hash"
+
+    if [ -n "$hash" ]; then
+        run-command "git reset $hash"
+    fi
 }
