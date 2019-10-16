@@ -31,7 +31,7 @@ cmds['h']="history"
 cmds['hd']="history-dir"
 cmds['sta']="stash-apply"
 cmds['stp']="stash-pop"
-cmds['sts']="stash-save"
+cmds['stm']="stash-message"
 
 # common functions used in commands
 source "$DIR/_run-command"

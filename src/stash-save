@@ -1,9 +1,0 @@
-#!/bin/bash
-
-stash-save () {
-    read -p "New stash name: " stash_name
-
-    if [ -n "$stash_name" ]; then
-        git stash save \""$stash_name"\"
-    fi
-}

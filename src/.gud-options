@@ -21,7 +21,7 @@ gud history                           | Show the history of commands run
 gud history-dir                       | Show the history of commands run in the current working directory
 gud stash-apply                       | Apply the selected stash to the current branch
 gud stash-pop                         | Apply the selected stash to the current branch and delete the stash
-gud stash-save                        | Stash changes under a name
+gud stash-message                     | Stash changes with a message
 git commit -a                         | Commit all changes
 git log                               | Show the commit history
 git status                            | Show current branch details

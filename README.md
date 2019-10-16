@@ -107,4 +107,4 @@ gud [command|alias]
 | history-dir                | hd    | Show the history of commands run in the current working directory   |
 | stash-apply                | sta   | Apply the selected stash to the current branch                      |
 | stash-pop                  | stp   | Apply the selected stash to the current branch and delete the stash |
-| stash-save                 | sts   | Stash changes under a name                                          |
+| stash-message              | stm   | Stash changes with a message
