@@ -100,8 +100,11 @@ gud [command|alias]
 | reset                      | rs    | Unstage changes after the selected commit                           |
 | reset-hard                 | rsh   | Revert to the selected commit, discarding changes                   |
 | cherry-pick                | cp    | Merge specific commits into the current branch                      |
-| history                    | h     | Show the history of commands run                                    |
-| history-dir                | hd    | Show the history of commands run in the current working directory   |
 | diff-commits               | di    | Select two commits and show the changes between them                |
 | difftool-commits           | dit   | Select two commits and show the changes using difftool              |
 | difftool-commits-dir-diff  | dd    | Select two commits and show the changed files by directory          |
+| history                    | h     | Show the history of commands run                                    |
+| history-dir                | hd    | Show the history of commands run in the current working directory   |
+| stash-apply                | sta   | Apply the selected stash to the current branch                      |
+| stash-pop                  | stp   | Apply the selected stash to the current branch and delete the stash |
+| stash-save                 | sts   | Stash changes under a name                                          |
