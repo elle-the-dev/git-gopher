@@ -5,6 +5,6 @@
 checkout-branch () {
     target=$(get-branch-name "" 'echo "git checkout {2}"')
     if [ -n "$target" ]; then
-        run-command "git checkout $(awk '{print $2}' <<<$target )"
+        run-command "git checkout $target"
     fi
 }
