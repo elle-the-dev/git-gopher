@@ -8,7 +8,7 @@ menu () {
     fi
 
     all_options=$(printf "$options\n$custom_options")
-    target=$(echo "$all_options" | column -ts '|' | fzf --preview="")
+    target=$(echo "$all_options" | awk -F '|' '{printf("\x1b[34;1m%-25s\x1b[m\t%s\n", $1, $2)}' | fzf --ansi --preview="")
 
     if [ -n "$target" ]; then
         cmd=$(echo "$target" | awk -F"  " '{print $1}')

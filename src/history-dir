@@ -4,7 +4,7 @@ history-dir () {
     histfile=~/.config/git-gud/history
     dir=$(pwd)
     if [ -f "$histfile" ]; then
-        tac "$histfile" | grep "$dir$" | column -ts '|' | less
+        tac "$histfile" | grep "$dir$" | awk -F '|' '{printf("\x1b[34;1m%-35s\x1b[m\t%-20s\t%s\n", $1, $2, $3)}' | less
     else
         echo "No git-gud history found"
     fi
