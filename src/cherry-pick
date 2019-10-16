@@ -1,7 +1,16 @@
 #!/bin/bash
 
 cherry-pick () {
-    hash=$(get-commit-hash)
+    branch=$(get-branch-name)
+
+    if [ -z "$branch" ]; then
+        exit
+    fi
+
+    log_entries=$(git log "$branch" --no-merges --color=always --pretty=format:'%C(blue)%h%C(reset)|%ad|%an|%C(yellow)%d %C(reset)%s' --date=relative |  awk -F '|' '{printf("%-20s\t%-10s\t%-20s\t%s\n", $1, $2, $3, $4)}')
+    preview="echo 'git cherry-pick -e {1}'"
+    log_entry=$(echo "$log_entries" | fzf --ansi --preview="eval $preview" --preview-window down:5)
+    hash=$(echo "$log_entry" | awk '{print $1}')
 
     if [ -n "$hash" ]; then
         run-command "git cherry-pick -e $hash"
