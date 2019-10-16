@@ -14,6 +14,11 @@ gud delete-tag-remote             | Delete a tag both locally and on remote
 gud reset                         | Unstage changes after the selected commit
 gud reset-hard                    | Revert to the selected commit, discarding changes
 gud cherry-pick                   | Merge specific commits into the current branch
+gud diff-commits                  | Select two commits and show the changes between them
+gud difftool-commits              | Select two commits and show the changes using difftool
+gud difftool-commits-dir-diff     | Select two commits and show the changed files by directory
+gud history                       | Show the history of commands run
+gud history-dir                   | Show the history of commands run in the current working directory
 git commit -a                     | Commit all changes
 git log                           | Show the commit history
 git status                        | Show current branch details

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+history () {
+    histfile=~/.config/git-gud/history
+    if [ -f "$histfile" ]; then
+        tac "$histfile" | column -ts '|' | less
+    else
+        echo "No git-gud history found"
+    fi
+}
