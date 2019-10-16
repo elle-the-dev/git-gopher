@@ -15,7 +15,7 @@ get-branch-name () {
     target=$(
       (echo "$branches";) |
       fzf --no-hscroll --no-multi -n 2 \
-          --ansi --preview "eval $preview" --preview-window down:5) || exit
+          --ansi --preview "eval $preview" --preview-window down:5 | awk '{print $2}') || exit
 
     if [ -n "$target" ]; then
         echo "$target"
