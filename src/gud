@@ -47,5 +47,5 @@ else
 
     # load menu options
     source "$DIR/menu"
-    menu
+    menu "$DIR"
 fi
