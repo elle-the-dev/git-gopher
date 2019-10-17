@@ -16,6 +16,8 @@ And unlike the git GUIs out there, **git-gud** will say exactly what it's doing 
 
 [git](https://github.com/git/git) and [fzf](https://github.com/junegunn/fzf) must be installed.
 
+To use syntax highlighting in commands with preview windows like `stash-pop`, [bat](https://github.com/sharkdp/bat) is required.
+
 ## Installation
 
 Clone the repository to a location where it can live in perpetuity.

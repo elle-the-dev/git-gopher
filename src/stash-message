@@ -1,6 +1,7 @@
 #!/bin/bash
 
 stash-message () {
+    echo "git stash push -m \"[your message here]\"";
     read -p "Message: " stash_message
 
     if [ -n "$stash_message" ]; then
