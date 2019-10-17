@@ -32,4 +32,3 @@ git difftool --dir-diff               | dd    | Open all changes in difftool
 git diff --name-only --diff-filter=U  | mc    | Show a list of filenames with conflicts
 git mergetool                         | mtl   | Open conflicts in mergetool
 git branch --edit-description         | desc  | Edit branch description
-git branch --edit-description         | desc  | Edit branch description
