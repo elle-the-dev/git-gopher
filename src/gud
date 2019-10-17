@@ -9,14 +9,15 @@ DIR=`dirname $SCRIPT`
 # $ gud c
 
 source "$DIR/_get-options"
-options=$(get-options "$DIR")
+options=$(get-options)
 
 declare -A cmds
 
 cache_file="$DIR/.gud-options-cache"
-if [ -f "$cache_file" ]; then
-    source "$cache_file"
-else
+
+# parsing the file for columns causes a little delay
+# so we save the definitions in a cache file so it will load instantly
+if [ ! -f "$cache_file" ]; then
     printf "#!/bin/bash\n" > "$cache_file"
     while read -r line; do
         cmd=$(echo "$line" | cut -d'|' -f1| xargs)
@@ -24,6 +25,8 @@ else
         printf "cmds[\"$shortcut\"]=\"$cmd\"\n" >> "$cache_file"
     done <<< "$options"
 fi
+
+source "$cache_file"
 
 # common functions used in commands
 source "$DIR/_run-command"
