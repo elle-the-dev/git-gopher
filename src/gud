@@ -7,32 +7,23 @@ DIR=`dirname $SCRIPT`
 
 # shortcuts to be run as, for example
 # $ gud c
+
+source "$DIR/_get-options"
+options=$(get-options "$DIR")
+
 declare -A cmds
-cmds['c']="checkout-branch"
-cmds['cr']="checkout-branch-remote"
-cmds['ct']="checkout-tag"
-cmds['bt']="branch-tag"
-cmds['m']="merge-branch"
-cmds['mt']="merge-tag"
-cmds['ms']="merge-squash"
-cmds['f']="fetch"
-cmds['up']="upstream-push"
-cmds['pt']="push-tag"
-cmds['d']="delete-branch"
-cmds['df']="delete-branch-force"
-cmds['dt']="delete-tag"
-cmds['dtr']="delete-tag-remote"
-cmds['rs']="reset"
-cmds['rsh']="reset-hard"
-cmds['cp']="cherry-pick"
-cmds['di']="diff-commits"
-cmds['dit']="difftool-commits"
-cmds['dd']="difftool-commits-dir-diff"
-cmds['h']="history"
-cmds['hd']="history-dir"
-cmds['sta']="stash-apply"
-cmds['stp']="stash-pop"
-cmds['stm']="stash-message"
+
+cache_file="$DIR/.gud-options-cache"
+if [ -f "$cache_file" ]; then
+    source "$cache_file"
+else
+    printf "#!/bin/bash\n" > "$cache_file"
+    while read -r line; do
+        cmd=$(echo "$line" | cut -d'|' -f1| xargs)
+        shortcut=$(echo "$line" | cut -d'|' -f2 | xargs)
+        printf "cmds[\"$shortcut\"]=\"$cmd\"\n" >> "$cache_file"
+    done <<< "$options"
+fi
 
 # common functions used in commands
 source "$DIR/_run-command"
@@ -45,7 +36,6 @@ source "$DIR/_get-remote-name"
 if [ -v cmds[$1] ]; then
     # a short cut was used
     # $ gud c
-    source "$DIR/${cmds[$1]}"
     ${cmds[$1]}
 elif [ -f "$DIR/$1" ]; then
     # long-form of the command passed through
@@ -56,7 +46,6 @@ else
     # either no command was passed, or an invalid one was
 
     # load menu options
-    options=$(cat "$DIR/.gud-options")
     source "$DIR/menu"
     menu
 fi

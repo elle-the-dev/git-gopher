@@ -28,3 +28,10 @@ if [ -d ~/.config/git-gud ]; then
     rm -rf ~/.config/git-gud
     echo "Deleted ~/.config/git-gud"
 fi
+
+SCRIPT=`realpath $0`
+DIR=`dirname $SCRIPT`
+hook_file="$DIR/.git/hooks/post-merge"
+if [ -f "$hook_file" ]; then
+    rm "$hook_file"
+fi
