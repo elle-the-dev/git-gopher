@@ -1,0 +1,14 @@
+#!/bin/bash
+
+get-options () {
+    local options custom_options
+    options=$(cat "$DIR/.gud-options")
+    if [ -f ~/.options ]; then
+        custom_options=$(cat ~/.gud-options)
+    else
+        custom_options=""
+    fi
+
+    options=$(printf "$options\n$custom_options")
+    echo "$options"
+}

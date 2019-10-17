@@ -23,6 +23,10 @@ create_symlink () {
         INSTALL_DIR="/usr/local/bin"
     fi
 
+    if [ -f "$DIR/.git/hooks/post-merge" ]; then
+        ln -s "$DIR/post-merge" "$DIR/.git/hooks/post-merge"
+    fi
+
     # do not overwrite existing file in install directory
     if [ ! -f "$INSTALL_DIR/$1" ]; then
         ln -s "$DIR/src/$1" "$INSTALL_DIR/$1"

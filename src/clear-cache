@@ -1,0 +1,8 @@
+#!/bin/bash
+
+clear-cache () {
+    cache_file="$DIR/.gud-options-cache"
+    if [ -f "$cache_file" ]; then
+        rm -f "$cache_file"
+    fi
+}

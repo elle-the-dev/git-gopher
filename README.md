@@ -60,13 +60,13 @@ The `gud` command with no arguments will bring up a fzf list of all the commands
 
 ![image](https://i.imgur.com/BO7rhuw.png)
 
-Custom commands can be added to menu by creating `~/.gud-options` with the options listed in it, one per line, with the command and description separated by `|`.
+Custom commands can be added to menu by creating `~/.gud-options` with the options listed in it, one per line, with the command, shortcut, and description separated by `|`.
 
-Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
+Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted into `columns` and the two spaces are how the command column is delimited.
 
 ```
-git dosomething      | Description of my command
-git dosomethingelse  | Description of my other command
+git dosomething      | shortcut  | Description of my command
+git dosomethingelse  | shortcut2 | Description of my other command
 ```
 
 ### Individual commands
@@ -108,5 +108,6 @@ gud [command|alias]
 | history-dir                | hd    | Show the history of commands run in the current working directory   |
 | stash-apply                | sta   | Apply the selected stash to the current branch                      |
 | stash-pop                  | stp   | Apply the selected stash to the current branch and delete the stash |
-| stash-message              | stm   | Stash changes with a message
-| stash-message              | stm   | Stash changes with a message
+| stash-message              | stm   | Stash changes with a message                                        |
+| stash-message              | stm   | Stash changes with a message                                        |
+| clear-cache                | clear | Delete the options cache so it will regenerate on next run          |

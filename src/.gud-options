@@ -1,33 +1,34 @@
-gud checkout-branch                   | Checkout a local branch
-gud checkout-branch-remote            | Checkout a local or remote branch
-gud checkout-tag                      | Checkout a tag
-gud branch-tag                        | Create a new branch from a tag
-gud merge-branch                      | Merge a branch into the current branch
-gud merge-tag                         | Merge a tag into the current branch
-gud merge-squash                      | Merge and squash a branch into the current branch
-gud fetch                             | Retrieve repo information from selected remote
-gud upstream-push                     | Push the current branch to remote, setting the upstream
-gud push-tag                          | Push a tag to remote
-gud delete-branch                     | Delete a branch
-gud delete-branch-force               | Force delete a branch
-gud delete-tag                        | Delete a tag locally
-gud delete-tag-remote                 | Delete a tag both locally and on remote
-gud reset                             | Unstage changes after the selected commit
-gud reset-hard                        | Revert to the selected commit, discarding changes
-gud cherry-pick                       | Merge specific commits into the current branch
-gud diff-commits                      | Select two commits and show the changes between them
-gud difftool-commits                  | Select two commits and show the changes using difftool
-gud difftool-commits-dir-diff         | Select two commits and show the changed files by directory
-gud history                           | Show the history of commands run
-gud history-dir                       | Show the history of commands run in the current working directory
-gud stash-apply                       | Apply the selected stash to the current branch
-gud stash-pop                         | Apply the selected stash to the current branch and delete the stash
-gud stash-message                     | Stash changes with a message
-git commit -a                         | Commit all changes
-git log                               | Show the commit history
-git status                            | Show current branch details
-git rebase -i                         | Interactive rebase
-git difftool --dir-diff               | Open all changes in difftool
-git diff --name-only --diff-filter=U  | Show a list of filenames with conflicts
-git mergetool                         | Open conflicts in mergetool
-git branch --edit-description         | Edit branch description
+gud checkout-branch                   | c     | Checkout a local branch
+gud checkout-branch-remote            | cr    | Checkout a local or remote branch
+gud checkout-tag                      | ct    | Checkout a tag
+gud branch-tag                        | bt    | Create a new branch from a tag
+gud merge-branch                      | m     | Merge a branch into the current branch
+gud merge-tag                         | mt    | Merge a tag into the current branch
+gud merge-squash                      | ms    | Merge and squash a branch into the current branch
+gud fetch                             | f     | Retrieve repo information from selected remote
+gud upstream-push                     | up    | Push the current branch to remote, setting the upstream
+gud push-tag                          | pt    | Push a tag to remote
+gud delete-branch                     | d     | Delete a branch
+gud delete-branch-force               | df    | Force delete a branch
+gud delete-tag                        | dt    | Delete a tag locally
+gud delete-tag-remote                 | dtr   | Delete a tag both locally and on remote
+gud reset                             | rs    | Unstage changes after the selected commit
+gud reset-hard                        | rsh   | Revert to the selected commit, discarding changes
+gud cherry-pick                       | cp    | Merge specific commits into the current branch
+gud diff-commits                      | di    | Select two commits and show the changes between them
+gud difftool-commits                  | dit   | Select two commits and show the changes using difftool
+gud difftool-commits-dir-diff         | dd    | Select two commits and show the changed files by directory
+gud history                           | h     | Show the history of commands run
+gud history-dir                       | hd    | Show the history of commands run in the current working directory
+gud stash-apply                       | sta   | Apply the selected stash to the current branch
+gud stash-pop                         | stp   | Apply the selected stash to the current branch and delete the stash
+gud stash-message                     | stm   | Stash changes with a message
+gud clear-cache                       | clear | Delete the options cache so it will regenerate on next run
+git commit -a                         | stm   | Commit all changes
+git log                               | l     | Show the commit history
+git status                            | s     | Show current branch details
+git rebase -i                         | ri    | Interactive rebase
+git difftool --dir-diff               | dd    | Open all changes in difftool
+git diff --name-only --diff-filter=U  | mc    | Show a list of filenames with conflicts
+git mergetool                         | mtl   | Open conflicts in mergetool
+git branch --edit-description         | desc  | Edit branch description
