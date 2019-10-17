@@ -6,12 +6,12 @@ gud merge-branch                      | m     | Merge a branch into the current 
 gud merge-tag                         | mt    | Merge a tag into the current branch
 gud merge-squash                      | ms    | Merge and squash a branch into the current branch
 gud fetch                             | f     | Retrieve repo information from selected remote
-gud upstream-push                     | d     | Push the current branch to remote, setting the upstream
-gud push-tag                          | df    | Push a tag to remote
-gud delete-branch                     | dt    | Delete a branch
-gud delete-branch-force               | dtr   | Force delete a branch
-gud delete-tag                        | up    | Delete a tag locally
-gud delete-tag-remote                 | pt    | Delete a tag both locally and on remote
+gud upstream-push                     | up    | Push the current branch to remote, setting the upstream
+gud push-tag                          | pt    | Push a tag to remote
+gud delete-branch                     | d     | Delete a branch
+gud delete-branch-force               | df    | Force delete a branch
+gud delete-tag                        | dt    | Delete a tag locally
+gud delete-tag-remote                 | dtr   | Delete a tag both locally and on remote
 gud reset                             | rs    | Unstage changes after the selected commit
 gud reset-hard                        | rsh   | Revert to the selected commit, discarding changes
 gud cherry-pick                       | cp    | Merge specific commits into the current branch
