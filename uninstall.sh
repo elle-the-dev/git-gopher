@@ -33,5 +33,10 @@ SCRIPT=`realpath $0`
 DIR=`dirname $SCRIPT`
 hook_file="$DIR/.git/hooks/post-merge"
 if [ -f "$hook_file" ]; then
-    rm "$hook_file"
+    rm -f "$hook_file"
+fi
+
+cache_file="$DIR/src/.gud-options-cache"
+if [ -f "$cache_file" ]; then
+    rm -f "$cache_file"
 fi
