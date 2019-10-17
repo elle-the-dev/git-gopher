@@ -45,10 +45,13 @@ elif [ -f "$DIR/$1" ]; then
     # $ gud checkout-branch
     source "$DIR/$1"
     $1
-else
-    # either no command was passed, or an invalid one was
-
+elif [ -z "$1" ]; then
+    # no command passed is the menu shortcut
     # load menu options
     source "$DIR/menu"
-    menu "$DIR"
+    menu
+else
+    printf "\nError: Unknown command\n\n"
+    printf "Run the following to see a list of commands:\n\n"
+    printf "$ gud\n"
 fi
