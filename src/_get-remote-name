@@ -1,0 +1,7 @@
+#!/bin/bash
+
+get-remote-name () {
+    remotes=$(git remote -v | uniq)
+    remote=$(echo "$remotes" | grep push | fzf --preview="echo \"git tag -d $tag && git push {1} \":refs/tags/$tag\"\"" --preview-window down:5)
+    echo $remote | awk '{print $1}'
+}
