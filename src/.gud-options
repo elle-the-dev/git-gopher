@@ -5,6 +5,7 @@ gud branch-tag                        | Create a new branch from a tag
 gud merge-branch                      | Merge a branch into the current branch
 gud merge-tag                         | Merge a tag into the current branch
 gud merge-squash                      | Merge and squash a branch into the current branch
+gud fetch                             | Retrieve repo information from selected remote
 gud upstream-push                     | Push the current branch to remote, setting the upstream
 gud push-tag                          | Push a tag to remote
 gud delete-branch                     | Delete a branch

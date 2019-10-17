@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fetch () {
+    remote=$(get-remote-name)
+    if [ -n "$remote" ]; then
+        run-command "git fetch $remote"
+    fi
+}

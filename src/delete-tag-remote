@@ -7,14 +7,12 @@ delete-tag-remote () {
         exit
     fi
 
-    remotes=$(git remote -v | uniq)
-    target=$(echo "$remotes" | grep push | fzf --preview="echo \"git tag -d $tag && git push {1} \":refs/tags/$tag\"\"" --preview-window down:5)
+    remote=$(get-remote-name)
 
-    if [ -z "$target" ]; then
+    if [ -z "$remote" ]; then
         exit
     fi
 
-    remote=$(echo "$target" | awk '{print $1}')
     run-command "git tag -d $tag"
     run-command "git push $remote :refs/tags/$tag"
 }
