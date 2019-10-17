@@ -23,7 +23,7 @@ create_symlink () {
         INSTALL_DIR="/usr/local/bin"
     fi
 
-    if [ -f "$DIR/.git/hooks/post-merge" ]; then
+    if [ ! -f "$DIR/.git/hooks/post-merge" ]; then
         ln -s "$DIR/post-merge" "$DIR/.git/hooks/post-merge"
     fi
 
