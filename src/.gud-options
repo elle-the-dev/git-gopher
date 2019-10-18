@@ -23,6 +23,7 @@ gud history-dir                       | hd    | Show the history of commands run
 gud stash-apply                       | sta   | Apply the selected stash to the current branch
 gud stash-pop                         | stp   | Apply the selected stash to the current branch and delete the stash
 gud stash-message                     | stm   | Stash changes with a message
+gud stash-drop                        | std   | Delete a stash
 gud clear-cache                       | clear | Delete the options cache so it will regenerate on next run
 git commit -a                         | cma   | Commit all changes
 git log                               | l     | Show the commit history
