@@ -3,9 +3,9 @@
 ## git checkout tag
 
 branch-tag () {
-    target=$(get-tag-name "" 'echo "git checkout -b {2} \[branch_name\]"')
+    target=$(get-tag-name "" 'echo "git checkout -b \[branch_name\] {2}"')
     if [ -n "$target" ]; then
         read -p "New branch name: " branch_name
-        run-command "git checkout -b \"$branch_name\" $(awk '{print $2}' <<<$target )"
+        run-command "git checkout -b \"$branch_name\" $target"
     fi
 }
