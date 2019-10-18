@@ -1,7 +1,5 @@
 #!/bin/bash
 
-    #target=$(get-branch-name "--all" "branch={2}; result=$(git show-ref \"refs/remotes/{2}\" | sed -e s/\'//g); if [ -n \"$result\" ]; then echo \"git checkout --track $branch\"; else echo \"git checkout $branch\"; fi;")
-
 remote_exists=$(git show-ref "refs/remotes/$1")
 if [ -n "$remote_exists" ]; then
     local_branch=$(echo "$1" | sed -e "s/^.*\///g")
