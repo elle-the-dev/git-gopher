@@ -1,0 +1,14 @@
+#!/bin/bash
+
+remote_exists=$(git show-ref "refs/remotes/$1")
+if [ -n "$remote_exists" ]; then
+    local_branch=$(echo "$1" | sed -e "s/^.*\///g")
+    local_exists=$(git show-ref "refs/heads/$local_branch")
+    if [ -z "$local_exists" ]; then
+        echo "git checkout --track $1"
+    else
+        echo "git checkout $local_branch"
+    fi
+else
+    echo "git checkout $1"
+fi
