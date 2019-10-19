@@ -89,6 +89,7 @@ gud [command|alias]
 | checkout-branch            | c     | Checkout a local branch                                             |
 | checkout-branch-remote     | cr    | Checkout a local or remote branch                                   |
 | checkout-tag               | ct    | Checkout a tag                                                      |
+| branch-branch              | bb    | Create and checkout a new branch from another branch                |
 | branch-tag                 | bt    | Create and checkout a new branch from a tag                         |
 | merge-branch               | m     | Merge a branch into the current branch                              |
 | merge-tag                  | mt    | Merge a tag into the current branch                                 |
