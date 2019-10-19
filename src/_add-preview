@@ -1,0 +1,38 @@
+#!/bin/bash
+
+SCRIPT=`realpath $0`
+DIR=`dirname $SCRIPT`
+
+is_tracked=$(git ls-files "$1")
+
+printf "git add $1\n\n"
+
+if [ -f "$1" ]; then
+    if [ -n "$is_tracked" ]; then
+        # tracked
+        git diff "$1" | bat --color=always --style=numbers -l Diff
+    else
+        # not tracked
+        bat --color=always --style=numbers "$1"
+    fi
+    exit
+fi
+
+diff=$(git diff "$1")
+
+if [ -z "$diff" ]; then
+    files=$(git ls-files "$1" --exclude-standard --others -m)
+    while read -r file; do
+        # give each file a header with the filename
+        printf "\n\n\x1b[33;1m"
+        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+        echo "$file"
+        printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+        printf "\x1b[m\n"
+
+        # output the file with syntax highlighting
+        cat "$file" | "$DIR/_colorize"
+    done <<< "$files"
+else
+    git diff "$1" | bat --color=always --style=numbers -l Diff
+fi

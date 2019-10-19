@@ -1,21 +1,27 @@
 #!/bin/bash
 
 add () {
-    files=$(git ls-files "$DIR/../" --exclude-standard --others -m)
+    GITDIR=$(git rev-parse --show-toplevel)
+    files=$(git ls-files "$GITDIR" --exclude-standard --others -m)
     while read -r file; do
         # break up path into subdirectories
         # e.g. path/to/file becomes path\nto
         # so we can include directories in the list to add
         splits=$(echo "$file" | sed -e "s/\//\n/g" | sed '$d')
+        path=""
         while read -r split; do
+            # remove leading slash so path is relative
+            path=$(echo "$path/$split" | sed "s#^/##g")
             if [ -n "$split" ]; then
-                files=$(printf "$files\n$split")
+                files=$(printf "$files\n$path")
             fi
         done <<< "$splits"
     done <<< "$files"
 
     # put . and .. first
-    files=$(printf "$files\n." | uniq | sort -r)
+    files=$(printf "$files\n." | sort -r | uniq)
+
+    # Colorize the options, prefixing either "dir" or "file"
     list=""
     while read -r file; do
         if [ -d "$file" ]; then
@@ -25,9 +31,7 @@ add () {
         fi
     done <<< "$files"
 
-    # list the number of files in the preview window
-
-    path=$(echo "$list" | fzf --no-hscroll --ansi --preview "git ls-files {2} --exclude-standard --others -m | cat <(echo -n \"$1\n\ngit add {2}\n\n\") -")
+    path=$(echo "$list" | fzf --no-hscroll --ansi --preview "$DIR/_add-preview {2}" | awk '{print $2}')
 
     if [ -n "$path" ]; then
         git add "$path"
