@@ -4,9 +4,7 @@ get-stash-ref () {
     preview="echo {1} | awk -F':' '{print \$1}' | xargs git stash show -p | cat <(echo -n \"$1\n\nALT+J: Down | ALT+K: Up\n----------------------------\n\n\") -"
     stashes=$(git stash list)
 
-    if [ -x $(command -v bat) ]; then
-        preview="$preview | bat -pp --color=always --style=numbers -l\"Diff\""
-    fi
+    preview="$preview | $DIR/_colorize -lDiff"
     stash=$(echo "$stashes" | fzf --no-hscroll --no-multi --ansi --preview "eval $preview" --bind alt-j:preview-down,alt-k:preview-up | awk -F':' '{print $1}') || exit
     echo "$stash"
 }

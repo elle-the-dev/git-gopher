@@ -93,8 +93,9 @@ gud [command|alias]
 | merge-branch               | m     | Merge a branch into the current branch                              |
 | merge-tag                  | mt    | Merge a tag into the current branch                                 |
 | merge-squash               | ms    | Merge and squash a branch into the current branch                   |
+| add                        | a     | Track and stage selected files                                      |
 | fetch                      | f     | Retrieve repo information from selected remote                      |
-| track-remote               | tr    | Change which remote upstream to track                     |
+| track-remote               | tr    | Change which remote upstream to track                               |
 | upstream-push              | up    | Push the current branch to remote, setting the upstream             |
 | push-tag                   | pt    | Push a tag to a remote                                              |
 | delete-branch              | d     | Delete a branch                                                     |

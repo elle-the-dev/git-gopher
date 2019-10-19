@@ -5,6 +5,7 @@ gud branch-tag                        | bt    | Create a new branch from a tag
 gud merge-branch                      | m     | Merge a branch into the current branch
 gud merge-tag                         | mt    | Merge a tag into the current branch
 gud merge-squash                      | ms    | Merge and squash a branch into the current branch
+gud add                               | a     | Track and stage selected files
 gud fetch                             | f     | Retrieve repo information from selected remote
 gud track-remote                      | tr    | Change which remote upstream to track
 gud upstream-push                     | up    | Push the current branch to remote, setting the upstream
