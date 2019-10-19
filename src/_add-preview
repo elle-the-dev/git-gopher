@@ -10,10 +10,10 @@ printf "git add $1\n\n"
 if [ -f "$1" ]; then
     if [ -n "$is_tracked" ]; then
         # tracked
-        git diff "$1" | bat --color=always --style=numbers -l Diff
+        git diff "$1" | "$DIR/_colorize" -lDiff
     else
         # not tracked
-        bat --color=always --style=numbers "$1"
+        cat "$1" | "$DIR/_colorize"
     fi
     exit
 fi
@@ -34,5 +34,5 @@ if [ -z "$diff" ]; then
         cat "$file" | "$DIR/_colorize"
     done <<< "$files"
 else
-    git diff "$1" | bat --color=always --style=numbers -l Diff
+    git diff "$1" | "$DIR/_colorize" -lDiff
 fi
