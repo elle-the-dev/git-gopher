@@ -1,4 +1,5 @@
 #!/bin/bash
+# foo
 
 CUSTOM_INSTALL_DIR="$1"
 
