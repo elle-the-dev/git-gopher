@@ -12,10 +12,7 @@ get-branch-name () {
         preview="git config branch.{2}.description"
     fi
 
-    target=$(
-      (echo "$branches";) |
-      fzf --no-hscroll --no-multi -n 2 \
-          --ansi --preview "eval $preview" --preview-window down:5 | awk '{print $2}') || exit
+    target=$(echo "$branches" | format-columns | fzf --no-hscroll --no-multi --ansi --preview "eval $preview" --preview-window down:5 | awk '{print $2}') || exit
 
     if [ -n "$target" ]; then
         echo "$target"

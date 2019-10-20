@@ -1,8 +1,8 @@
 #!/bin/bash
 
 menu () {
-    options=$(get-options)
-    target=$(echo "$options" | awk -F '|' '{printf("\x1b[34;1m%-25s\t\x1b[33;1m%-6s\x1b[m\t%s\n", $1, $2, $3)}' | fzf --ansi --preview="")
+    options=$(get-options | awk -F '|' "{printf(\"\x1b[34;1m%s|\x1b[33;1m%s\x1b[m|%s\n\", \$1, \$2, \$3)}")
+    target=$(echo "$options" | format-columns | fzf --ansi --preview="")
 
     if [ -n "$target" ]; then
         cmd=$(echo "$target" | awk -F"  " '{print $1}')

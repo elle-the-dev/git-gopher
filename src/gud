@@ -35,6 +35,7 @@ source "$DIR/_get-tag-name"
 source "$DIR/_get-commit-hash"
 source "$DIR/_get-stash-ref"
 source "$DIR/_get-remote-name"
+source "$DIR/_format-columns"
 
 if [ -v cmds[$1] ]; then
     # a short cut was used
