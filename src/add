@@ -31,13 +31,13 @@ add () {
         fi
 
         if [ -d "$file" ]; then
-            list=$(printf "\x1b[36;1mdir\x1b[m\t$file\n$list")
+            list=$(printf "\x1b[36;1mdir\x1b[m|$file\n$list")
         else
-            list=$(printf "\x1b[34;1mfile\x1b[m\t$file\n$list")
+            list=$(printf "\x1b[34;1mfile\x1b[m|$file\n$list")
         fi
     done <<< "$files"
 
-    path=$(echo "$list" | fzf --no-hscroll --ansi --preview "$DIR/_add-preview {2}" | awk '{print $2}')
+    path=$(echo "$list" | format-columns | fzf --no-hscroll --ansi --preview "$DIR/_add-preview {2}" | awk '{print $2}')
 
     if [ -n "$path" ]; then
         git add "$path"

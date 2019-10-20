@@ -3,7 +3,7 @@
 get-commit-hash () {
     preview=$1
     log_entries=$(git log --color=always --pretty=format:'%C(blue)%h%C(reset)|%ad|%an|%C(yellow)%d %C(reset)%s' --date=relative |  awk -F '|' '{printf("%-20s\t%-10s\t%-20s\t%s\n", $1, $2, $3, $4)}')
-    log_entry=$(echo "$log_entries" | fzf --ansi --preview="eval $preview" --preview-window down:5)
+    log_entry=$(echo "$log_entries" | fzf --no-hscroll --no-multi --ansi --preview="eval $preview" --preview-window down:5)
     hash=$(echo "$log_entry" | awk '{print $1}')
     echo "$hash"
 }
