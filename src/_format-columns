@@ -21,7 +21,7 @@ format-columns () {
     elif [[ $column_count -eq 4 ]]; then
         column_size3=$(echo "$lengths" | awk -F'|' '{print $3}')
         column_size4=$(echo "$lengths" | awk -F'|' '{print $4}')
-        echo "$input" | awk -F'|' "{printf(\"%-${column_size1}s\t%-${column_size2}s%s\t%-${column_size3}\t%s\n\", \$1, \$2, \$3, \$4)}"
+        echo "$input" | awk -F'|' "{printf(\"%-${column_size1}s\t%-${column_size2}s\t%-${column_size3}s\t%s\n\", \$1, \$2, \$3, \$4)}"
     else
         echo "$input"
     fi

@@ -8,6 +8,7 @@ run-command () {
 
     branch=$(git rev-parse --abbrev-ref HEAD)
     working_dir=$(pwd)
-    echo "$1|$branch|$working_dir" >> "$config_dir/history"
+    now=$(date '+%Y-%m-%d %H:%M:%S')
+    echo "$now|$1|$branch|$working_dir" >> "$config_dir/history"
     bash -c "$1"
 }
