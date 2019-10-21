@@ -11,6 +11,7 @@ gud fetch                             | f     | Retrieve repo information from s
 gud track-remote                      | tr    | Change which remote upstream to track
 gud upstream-push                     | up    | Push the current branch to remote, setting the upstream
 gud push-tag                          | pt    | Push a tag to remote
+gud tag-increment-version             | tiv   | Create a new tag, incremented by major, minor or patch
 gud delete-branch                     | d     | Delete a branch
 gud delete-branch-force               | df    | Force delete a branch
 gud delete-tag                        | dt    | Delete a tag locally

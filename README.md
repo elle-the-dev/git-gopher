@@ -99,6 +99,7 @@ gud [command|alias]
 | track-remote               | tr    | Change which remote upstream to track                               |
 | upstream-push              | up    | Push the current branch to remote, setting the upstream             |
 | push-tag                   | pt    | Push a tag to a remote                                              |
+| tag-increment-version      | tiv   | Create a new tag, incremented by major, minor or patch              |
 | delete-branch              | d     | Delete a branch                                                     |
 | delete-branch-force        | df    | Force delete a branch                                               |
 | delete-tag                 | dt    | Delete a tag locally                                                |
