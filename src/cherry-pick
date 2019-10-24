@@ -7,7 +7,7 @@ cherry-pick () {
         exit
     fi
 
-    hash=$(get-commit-hash "echo \"git cherry-pick -e {1} \"")
+    hash=$(get-commit-hash "$branch" "echo \"git cherry-pick -e {1} \"")
 
     if [ -n "$hash" ]; then
         run-command "git cherry-pick -e $hash"

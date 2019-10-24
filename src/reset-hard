@@ -1,7 +1,7 @@
 #!/bin/bash
 
 reset-hard () {
-    hash=$(get-commit-hash "echo \"git reset --hard {1} \"")
+    hash=$(get-commit-hash "" "echo \"git reset --hard {1} \"")
 
     if [ -n "$hash" ]; then
         run-command "git reset --hard $hash"
