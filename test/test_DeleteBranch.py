@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import MagicMock
-from gitgud.Fzf import Fzf
-from gitgud.GitDataGetter import GitDataGetter
-from gitgud.CommandRunner import CommandRunner
-from gitgud.DeleteBranch import DeleteBranch
+from git_gud.Fzf import Fzf
+from git_gud.GitDataGetter import GitDataGetter
+from git_gud.CommandRunner import CommandRunner
+from git_gud.DeleteBranch import DeleteBranch
 
 class TestDeleteBranch(unittest.TestCase):
 
