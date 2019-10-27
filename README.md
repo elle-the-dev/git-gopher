@@ -1,4 +1,4 @@
-# git-going
+# git-gopher
 
 Improving the Git CLI experience with fzf
 
@@ -6,11 +6,11 @@ Improving the Git CLI experience with fzf
 
 ## What is this?
 
-Rather than needing to remember the exact name of the branch, tag or remote, or the exact syntax of the different git commands needed, **git-going** will provide a list to choose from.
+Rather than needing to remember the exact name of the branch, tag or remote, or the exact syntax of the different git commands needed, **git-gopher** will provide a list to choose from.
 
 By using `fzf` for these lists, finding and choosing which item can be done by fuzzy searching the text.
 
-And unlike the git GUIs out there, **git-going** will say exactly what it's doing by displaying the command it will run before the selection is made.
+And unlike the git GUIs out there, **git-gopher** will say exactly what it's doing by displaying the command it will run before the selection is made.
 
 ## Requirements
 
@@ -27,16 +27,16 @@ To use syntax highlighting in commands with preview windows like `stash-pop`, [b
 Install via pip
 
 ```
-pip3 install git_going
+pip3 install git_gopher
 ```
 
 ## Usage
 
-**gid-going** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
+**gid-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
 
 ### Menu
 
-The `ggo` command with no arguments will bring up a fzf list of all the commands that git-going provides, as well as additional standard git commands.
+The `ggo` command with no arguments will bring up a fzf list of all the commands that git-gopher provides, as well as additional standard git commands.
 
 ![image](https://i.imgur.com/5HA1oqV.png)
 
