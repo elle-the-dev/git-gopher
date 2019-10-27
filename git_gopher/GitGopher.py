@@ -16,9 +16,12 @@ class GitGopher():
         else:
             cmd = argv[1]
 
-        long_cmd = self._shortcut_to_long(cmd)
+        shortcuts = self._get_shortcuts()
+        if cmd in shortcuts.keys():
+            return run(shortcuts.get(cmd).split())
+
         try:
-            command = self._command_factory.make(long_cmd)
+            command = self._command_factory.make(cmd)
             response = command.run()
             if response:
                 print(response)
@@ -27,16 +30,13 @@ class GitGopher():
             print("Run the following to see a list of commands:\n")
             print("$ ggo")
 
-    def _shortcut_to_long(self, shortcut: str):
+    def _get_shortcuts(self):
         options = self._options.get().splitlines()
 
         switcher = {}
-
         for option in options:
             pieces = option.split('|')
             switcher[pieces[1].strip()] = pieces[0].strip()
 
-        if shortcut in switcher.keys():
-            return run(switcher.get(shortcut).split())
-        else:
-            return shortcut
+        return switcher
+
