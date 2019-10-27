@@ -1,6 +1,7 @@
 from os import path
 from pathlib import Path
 from re import sub
+from subprocess import run
 
 class GitGopher():
     def __init__(self, command_factory, options):
@@ -33,9 +34,9 @@ class GitGopher():
 
         for option in options:
             pieces = option.split('|')
-            switcher[pieces[1].strip()] = sub(r'^ggo ', '', pieces[0].strip())
+            switcher[pieces[1].strip()] = pieces[0].strip()
 
         if shortcut in switcher.keys():
-            return switcher.get(shortcut)
-
-        return shortcut
+            return run(switcher.get(shortcut).split())
+        else:
+            return shortcut
