@@ -2,7 +2,7 @@
 
 Improving the Git CLI experience with fzf
 
-![image](https://i.imgur.com/qybpzjB.gif)
+![image](https://i.imgur.com/H1R5NxU.gif)
 
 ## What is this?
 
@@ -39,7 +39,7 @@ pip3 install git_gopher
 
 The `ggo` command with no arguments will bring up a fzf list of all the commands that git-gopher provides, as well as additional standard git commands.
 
-![image](https://i.imgur.com/5HA1oqV.png)
+![image](https://i.imgur.com/E8RsDeS.png)
 
 Custom commands can be added to menu by creating `~/ggo-options.dat` with the options listed in it, one per line, with the command, shortcut, and description separated by `|`.
 
