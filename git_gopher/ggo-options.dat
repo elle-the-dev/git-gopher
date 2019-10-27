@@ -1,0 +1,38 @@
+ggo checkout-branch                  | c     | Checkout a local branch
+ggo checkout-branch-remote           | cr    | Checkout a local or remote branch
+ggo checkout-tag                     | ct    | Checkout a tag
+ggo branch-branch                    | bb    | Create a new branch from another branch
+ggo branch-tag                       | bt    | Create a new branch from a tag
+ggo merge-branch                     | m     | Merge a branch into the current branch
+ggo merge-tag                        | mt    | Merge a tag into the current branch
+ggo merge-squash                     | ms    | Merge and squash a branch into the current branch
+ggo add                              | a     | Track and stage selected files
+ggo fetch                            | f     | Retrieve repo information from selected remote
+ggo track-remote                     | tr    | Change which remote upstream to track
+ggo upstream-push                    | up    | Push the current branch to remote, setting the upstream
+ggo push-tag                         | pt    | Push a tag to remote
+ggo tag-increment-version            | tiv   | Create a new tag, incremented by major, minor or patch
+ggo delete-branch                    | d     | Delete a branch
+ggo delete-branch-force              | df    | Force delete a branch
+ggo delete-tag                       | dt    | Delete a tag locally
+ggo delete-tag-remote                | dtr   | Delete a tag both locally and on remote
+ggo reset                            | rs    | Unstage changes after the selected commit
+ggo reset-hard                       | rsh   | Revert to the selected commit, discarding changes
+ggo cherry-pick                      | cp    | Merge specific commits into the current branch
+ggo diff-commits                     | di    | Select two commits and show the changes between them
+ggo difftool-commits                 | dit   | Select two commits and show the changes using difftool
+ggo difftool-commits-dir-diff        | dd    | Select two commits and show the changed files by directory
+ggo history                          | h     | Show the history of commands run
+ggo history-dir                      | hd    | Show the history of commands run in the current working directory
+ggo stash-apply                      | sta   | Apply the selected stash to the current branch
+ggo stash-pop                        | stp   | Apply the selected stash to the current branch and delete the stash
+ggo stash-message                    | stm   | Stash changes with a message
+ggo stash-drop                       | std   | Delete a stash
+git commit -a                        | cma   | Commit all changes
+git log                              | l     | Show the commit history
+git status                           | s     | Show current branch details
+git rebase -i                        | ri    | Interactive rebase
+git difftool --dir-diff              | ddd   | Open all changes in difftool
+git diff --name-only --diff-filter=U | mc    | Show a list of filenames with conflicts
+git mergetool                        | mtl   | Open conflicts in mergetool
+git branch --edit-description        | desc  | Edit branch description
