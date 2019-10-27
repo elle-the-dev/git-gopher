@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import MagicMock
-from git_gud.Fzf import Fzf
-from git_gud.GitDataGetter import GitDataGetter
-from git_gud.CommandRunner import CommandRunner
-from git_gud.StashPop import StashPop
+from git_gopher.Fzf import Fzf
+from git_gopher.GitDataGetter import GitDataGetter
+from git_gopher.CommandRunner import CommandRunner
+from git_gopher.StashPop import StashPop
 
 class TestStashPop(unittest.TestCase):
 

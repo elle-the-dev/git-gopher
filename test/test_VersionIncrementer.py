@@ -1,5 +1,5 @@
 import unittest
-from git_gud.VersionIncrementer import VersionIncrementer
+from git_gopher.VersionIncrementer import VersionIncrementer
 
 class TestVersionIncrementer(unittest.TestCase):
     def test_major(self):

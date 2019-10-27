@@ -22,7 +22,7 @@ setup(
     # There are some restrictions on what makes a valid project name
     # specification here:
     # https://packaging.python.org/specifications/core-metadata/#name
-    name='git_going',  # Required
+    name='git_gopher',  # Required
 
     # Versions should comply with PEP 440:
     # https://www.python.org/dev/peps/pep-0440/
@@ -63,7 +63,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/derekhamilton/git-going',  # Optional
+    url='https://github.com/derekhamilton/git-gopher',  # Optional
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -142,7 +142,7 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.
     package_data={  # Optional
-        'git_going': ['ggo-options.dat'],
+        'git_gopher': ['ggo-options.dat'],
     },
 
     # To provide executable scripts, use entry points in preference to the
@@ -154,8 +154,8 @@ setup(
     # executes the function `main` from this package when invoked:
     entry_points={  # Optional
         'console_scripts': [
-            'ggo=git_going:main',
-            'ggo-get-incremented-version=git_going:get_incremented_version'
+            'ggo=git_gopher:main',
+            'ggo-get-incremented-version=git_gopher:get_incremented_version'
         ],
     },
 
@@ -169,6 +169,6 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Source': 'https://github.com/derekhamilton/git-going',
+        'Source': 'https://github.com/derekhamilton/git-gopher',
     },
 )
