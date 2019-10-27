@@ -1,8 +1,0 @@
-#!/bin/bash
-
-tag-increment-version () {
-    parts="\x1b[35;1mPart\x1b[m|Patch\n\x1b[35;1mPart\x1b[m|Minor\n\x1b[35;1mPart\x1b[m|Major"
-    part=$(printf "$parts"  | format-columns | fzf --ansi --preview="echo \"git tag \$(echo {2} | $DIR/_get-incremented-tag)\"" --preview-window down:5 | awk '{print $2}')
-    new_tag=$(echo "$part" | "$DIR/_get-incremented-tag")
-    git tag "$new_tag"
-}

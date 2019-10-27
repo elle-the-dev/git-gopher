@@ -1,9 +1,0 @@
-#!/bin/bash
-
-stash-pop () {
-    stash=$(get-stash-ref "git stash pop {1}")
-
-    if [ -n "$stash" ]; then
-        git stash pop "$stash"
-    fi
-}

@@ -1,0 +1,2 @@
+class NoTagsException(Exception):
+    pass

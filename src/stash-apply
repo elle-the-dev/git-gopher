@@ -1,9 +1,0 @@
-#!/bin/bash
-
-stash-apply () {
-    stash=$(get-stash-ref "git stash apply {1}")
-
-    if [ -n "$stash" ]; then
-        git stash apply "$stash"
-    fi
-}
