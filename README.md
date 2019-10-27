@@ -31,6 +31,12 @@ Install via pip
 pip3 install git_gopher
 ```
 
+Also, `$PATH` should contain the pip bin directory. That would look something like this in `.bashrc`, `.zshrc` or equivalent
+
+```
+PATH="$PATH:~/.local/bin"
+```
+
 ## Usage
 
 **gid-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
