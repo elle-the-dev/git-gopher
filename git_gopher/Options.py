@@ -6,7 +6,7 @@ from colorama import Fore, Back, Style
 class Options():
     def get(self):
         DIR = path.dirname(path.realpath(__file__))
-        custom_options_path = path.expanduser("~") + "/.ggo-options"
+        custom_options_path = path.expanduser("~") + "/.ggo-options.dat"
         options_path = f"{DIR}/ggo-options.dat"
         options = Path(options_path).read_text()
 
