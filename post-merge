@@ -1,5 +1,0 @@
-#!/bin/bash
-
-if [ command -v gud ]; then
-    gud clear-cache
-fi
