@@ -155,7 +155,9 @@ setup(
     entry_points={  # Optional
         'console_scripts': [
             'ggo=git_gopher:main',
-            'ggo-get-incremented-version=git_gopher:get_incremented_version'
+            'ggo-get-incremented-version=git_gopher:get_incremented_version',
+            'ggo-add-preview=git_gopher:add_preview'
+            #'ggo-colorize=git_gopher:ggo-colorize'
         ],
     },
 

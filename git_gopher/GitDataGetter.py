@@ -122,6 +122,9 @@ class GitDataGetter:
         if selection:
             return selection.split('\t')[1].strip()
 
+    def get_diff(self, file_path):
+        return check_output(['git', 'diff', file_path]).decode()
+
     def remote_branch_exists(self, remote: str):
         try:
             return bool(check_output(['git', 'show-ref', 'refs/remotes/' + remote]))

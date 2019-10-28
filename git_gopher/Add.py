@@ -57,8 +57,7 @@ class Add(CommandInterface):
 
     def _get_user_selection(self, unstaged_files):
         format_columns = FormatColumns()
-        DIR = path.dirname(path.realpath(__file__))
-        preview = DIR + "/_add-preview {2}"
+        preview = "ggo-add-preview {2}"
         filepath = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(unstaged_files)), preview=preview, preview_window="--preview-window=right")
 
         if (filepath):
