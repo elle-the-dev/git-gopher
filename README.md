@@ -17,15 +17,19 @@ And unlike the git GUIs out there, **git-gopher** will say exactly what it's doi
 The following must be installed
 
  - Python 3.5+
- - Python module `colorama` (`pip3 install colorama`)
  - [git](https://github.com/git/git)
  - [fzf](https://github.com/junegunn/fzf)
-
-To use syntax highlighting in commands with preview windows like `stash-pop`, [bat](https://github.com/sharkdp/bat) is required.
+ - [bat](https://github.com/sharkdp/bat) (Optional: For syntax highlighting)
 
 ## Installation
 
-Install via pip
+Make sure the basic build tools are installed
+
+```
+pip3 install setuptools wheel
+```
+
+Then we can install via pip
 
 ```
 pip3 install git_gopher
