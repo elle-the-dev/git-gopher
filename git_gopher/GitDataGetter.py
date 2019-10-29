@@ -28,7 +28,7 @@ class GitDataGetter:
             if multi == '--multi':
                 return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
             else:
-                return line.split('\t')[1].strip()
+                return lines.split('\t')[1].strip()
 
     def get_tag_name_from_tags(self, tags, options=[], preview=""):
         format_columns = FormatColumns()
