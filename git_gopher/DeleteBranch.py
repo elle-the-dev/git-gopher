@@ -6,7 +6,8 @@ class DeleteBranch(CommandInterface):
         self._git_data_getter = git_data_getter
 
     def run(self):
-        branch = self._git_data_getter.get_branch_name(preview='echo "git branch -d {2}"')
+        branches = self._git_data_getter.get_branch_names(preview='echo "git branch -d {2}"')
 
-        if branch:
-            self._command_runner.run(['git', 'branch', '-d', branch])
+        if branches:
+            for branch in branches:
+                self._command_runner.run(['git', 'branch', '-d', branch])
