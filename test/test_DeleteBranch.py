@@ -9,8 +9,9 @@ class TestDeleteBranch(unittest.TestCase):
 
     def test_run(self):
         branch = 'foo'
+        branches = [branch]
         git_data_getter = GitDataGetter(Fzf())
-        git_data_getter.get_branch_name = MagicMock(return_value=branch)
+        git_data_getter.get_branch_names = MagicMock(return_value=branches)
         command_runner = CommandRunner(git_data_getter)
         command_runner.run = MagicMock()
         delete_branch = DeleteBranch(command_runner, git_data_getter)
