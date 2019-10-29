@@ -19,7 +19,6 @@ The following must be installed
  - Python 3.5+
  - [git](https://github.com/git/git)
  - [fzf](https://github.com/junegunn/fzf)
- - [bat](https://github.com/sharkdp/bat) (Optional: For syntax highlighting)
 
 ## Installation
 
