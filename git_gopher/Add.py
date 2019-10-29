@@ -14,7 +14,7 @@ class Add(CommandInterface):
         filepaths = self._get_user_selections(unstaged_files)
 
         if filepaths:
-            for filepath in filepaths.splitlines():
+            for filepath in filepaths:
                 self._command_runner.run(['git', 'add', filepath])
 
     def _get_unstaged_files(self):
