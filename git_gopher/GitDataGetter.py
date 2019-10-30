@@ -1,5 +1,6 @@
 from os import path
 from re import sub
+import readline # fix backspace and arrow keys on input
 from subprocess import check_output, CalledProcessError
 from colorama import Fore
 from git_gopher.FormatColumns import FormatColumns
