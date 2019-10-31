@@ -31,6 +31,13 @@ class GitDataGetter:
             else:
                 return lines.split('\t')[1].strip()
 
+    def get_branch_names_remote(self, remote, preview=""):
+        format_columns = FormatColumns()
+        branches = check_output(['git', 'ls-remote', '--heads', remote]).decode()
+        branches = list(map(lambda line: 'branch|' + line.split()[1].strip().replace('refs/heads/', ''), branches.splitlines()))
+        lines = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format(branches))
+        return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
+
     def get_tag_name_from_tags(self, tags, options=[], preview=""):
         format_columns = FormatColumns()
 
