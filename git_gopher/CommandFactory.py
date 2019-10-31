@@ -22,6 +22,7 @@ from git_gopher.PushTag import PushTag
 from git_gopher.TagIncrementVersion import TagIncrementVersion
 from git_gopher.DeleteBranch import DeleteBranch
 from git_gopher.DeleteBranchForce import DeleteBranchForce
+from git_gopher.DeleteBranchRemote import DeleteBranchRemote
 from git_gopher.DeleteTag import DeleteTag
 from git_gopher.DeleteTagRemote import DeleteTagRemote
 from git_gopher.Reset import Reset
@@ -92,6 +93,9 @@ class CommandFactory:
     def delete_branch_force(self):
         return DeleteBranchForce(self._command_runner, self._git_data_getter)
 
+    def delete_branch_remote(self):
+        return DeleteBranchRemote(self._command_runner, self._git_data_getter)
+
     def delete_tag(self):
         return DeleteTag(self._command_runner, self._git_data_getter)
 
@@ -156,6 +160,7 @@ class CommandFactory:
             'tag-increment-version': self.tag_increment_version,
             'delete-branch': self.delete_branch,
             'delete-branch-force': self.delete_branch_force,
+            'delete-branch-remote': self.delete_branch_remote,
             'delete-tag': self.delete_tag,
             'delete-tag-remote': self.delete_tag_remote,
             'reset': self.reset,
