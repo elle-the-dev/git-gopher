@@ -6,8 +6,8 @@ from git_gopher.CommandInterface import CommandInterface
 from git_gopher.FormatColumns import FormatColumns
 
 class Menu(CommandInterface):
-    def __init__(self, command_runner, fzf, options):
-        self._command_runner = command_runner
+    def __init__(self, hist_command_runer, fzf, options):
+        self._hist_command_runer = hist_command_runer
         self._fzf = fzf
         self._options = options
 

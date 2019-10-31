@@ -2,8 +2,8 @@ from os import path
 from git_gopher.CommandInterface import CommandInterface
 
 class CheckoutBranchRemote(CommandInterface):
-    def __init__(self, command_runner, git_data_getter):
-        self._command_runner = command_runner
+    def __init__(self, hist_command_runer, git_data_getter):
+        self._hist_command_runer = hist_command_runer
         self._git_data_getter = git_data_getter
 
     def run(self):
@@ -14,4 +14,4 @@ class CheckoutBranchRemote(CommandInterface):
             return
 
         cmd = self._git_data_getter.checkout_branch_remote_command(branch)
-        self._command_runner.run(cmd)
+        self._hist_command_runer.run(cmd)
