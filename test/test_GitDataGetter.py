@@ -13,7 +13,7 @@ class TestGitDataGetter(unittest.TestCase):
         command_runner = CommandRunner()
         command_runner.check_output = MagicMock(return_value=branch)
 
-        git_data_getter = git_data_getter = GitDataGetter(Fzf(), command_runner)
+        git_data_getter = GitDataGetter(Fzf(), command_runner)
         result = git_data_getter.get_current_branch_name()
 
         self.assertEqual(result, 'foo')
@@ -26,7 +26,7 @@ class TestGitDataGetter(unittest.TestCase):
         fzf = Fzf()
         fzf.run = MagicMock(return_value="branch\t" + branch)
 
-        git_data_getter = git_data_getter = GitDataGetter(fzf, command_runner)
+        git_data_getter = GitDataGetter(fzf, command_runner)
         result = git_data_getter.get_branch_name()
         self.assertEqual(result, branch)
 
@@ -37,7 +37,7 @@ class TestGitDataGetter(unittest.TestCase):
         fzf = Fzf()
         fzf.run = MagicMock(return_value="tag\t" + tag)
 
-        git_data_getter = git_data_getter = GitDataGetter(fzf, command_runner)
+        git_data_getter = GitDataGetter(fzf, command_runner)
         result = git_data_getter.get_tag_name()
         self.assertEqual(result, tag)
 
@@ -48,8 +48,21 @@ class TestGitDataGetter(unittest.TestCase):
         fzf = Fzf()
         fzf.run = MagicMock(return_value="tag\t" + tag)
 
-        git_data_getter = git_data_getter = GitDataGetter(fzf, command_runner)
+        git_data_getter = GitDataGetter(fzf, command_runner)
         self.assertRaises(NoTagsException, git_data_getter.get_tag_name)
+
+    def test_get_commit_hash(self):
+        branch = 'foo'
+        commit = 'afe786e5'
+        output = commit + '\t1 day ago\tFoo Bar\tSomething something commit'
+        command_runner = CommandRunner()
+        command_runner.check_output = MagicMock(return_value=b'')
+        fzf = Fzf()
+        fzf.run = MagicMock(return_value=output)
+
+        git_data_getter = GitDataGetter(fzf, command_runner)
+        result = git_data_getter.get_commit_hash(branch)
+        self.assertEqual(result, commit)
 
 if __name__ == '__main__':
     unittest.main()
