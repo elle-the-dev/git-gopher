@@ -4,8 +4,8 @@ from git_gopher.CommandInterface import CommandInterface
 from git_gopher.FormatColumns import FormatColumns
 
 class Add(CommandInterface):
-    def __init__(self, command_runner, git_data_getter, fzf):
-        self._command_runner = command_runner
+    def __init__(self, hist_command_runer, git_data_getter, fzf):
+        self._hist_command_runer = hist_command_runer
         self._git_data_getter = git_data_getter
         self._fzf = fzf
 
@@ -15,7 +15,7 @@ class Add(CommandInterface):
 
         if filepaths:
             for filepath in filepaths:
-                self._command_runner.run(['git', 'add', filepath])
+                self._hist_command_runer.run(['git', 'add', filepath])
 
     def _get_unstaged_files(self):
         unstaged_files = self._git_data_getter.get_unstaged_files().splitlines()
