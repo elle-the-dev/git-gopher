@@ -11,7 +11,7 @@ class DeleteTagRemote(CommandInterface):
         if not remote:
             return
 
-        tags = self._git_data_getter.get_tag_name_remote(remote, preview='echo "git tag -d {2}"')
+        tags = self._git_data_getter.get_tag_names_remote(remote, preview='echo "git tag -d {2}"')
 
         if tags:
             for tag in tags:
