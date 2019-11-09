@@ -6,8 +6,7 @@ class StashMessage(CommandInterface):
         self._git_data_getter = git_data_getter
 
     def run(self):
-        print('git stash push -m "[your message here]"')
-        stash_message = self._git_data_getter.get_stash_message_from_input()
+        stash_message = self._git_data_getter.get_stash_message_from_input('git stash push -m "[your message here]"')
 
         if stash_message:
             self._hist_command_runer.run(['git', 'stash', 'push', '-m', stash_message])

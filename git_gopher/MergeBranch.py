@@ -10,3 +10,4 @@ class MergeBranch(CommandInterface):
 
         if branch:
             self._hist_command_runer.run(['git', 'merge', branch])
+            return 'Merged branch ' + branch
