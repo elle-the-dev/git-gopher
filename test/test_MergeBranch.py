@@ -13,7 +13,7 @@ class TestMergeBranch(unittest.TestCase):
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_branch_name = MagicMock(return_value=branch)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         merge_branch = MergeBranch(hist_command_runer, git_data_getter)

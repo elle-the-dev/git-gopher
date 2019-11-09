@@ -15,7 +15,7 @@ class TestPushTag(unittest.TestCase):
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_local_tag_name = MagicMock(return_value=tag)
         git_data_getter.get_remote_name = MagicMock(return_value=remote)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         fetch = PushTag(hist_command_runer, git_data_getter)
