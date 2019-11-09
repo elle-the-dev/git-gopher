@@ -11,10 +11,11 @@ class TestDeleteTagRemote(unittest.TestCase):
     def test_run(self):
         remote = 'foo'
         tag = 'v1.0.0'
+        tags = [tag]
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_remote_name = MagicMock(return_value=remote)
-        git_data_getter.get_tag_name_remote = MagicMock(return_value=tag)
+        git_data_getter.get_tag_name_remote = MagicMock(return_value=tags)
 
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()

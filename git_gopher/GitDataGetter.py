@@ -39,7 +39,7 @@ class GitDataGetter:
         lines = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(branches)))
         return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
 
-    def get_tag_name_from_tags(self, tags, options=[], preview=""):
+    def get_tag_name_from_tags(self, tags, options=[], preview="", multi="--no-multi"):
         format_columns = FormatColumns()
 
         # prepend 'tag' to each line
@@ -50,18 +50,29 @@ class GitDataGetter:
         if not tags:
             raise NoTagsException
 
-        line = self._fzf.run(format_columns.set_colors({ 0: Fore.BLUE }).format(tags), preview=preview)
+        lines = self._fzf.run(format_columns.set_colors({ 0: Fore.BLUE }).format(tags), preview=preview, multi=multi)
 
-        if line:
-            return line.split('\t')[1].strip()
+        if lines:
+            if multi == '--multi':
+                return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
+            else:
+                return lines.split('\t')[1].strip()
 
     def get_tag_name(self, options=[], preview=""):
         tags = self._command_runner.check_output(['git', '--no-pager', 'tag']).decode()
         return self.get_tag_name_from_tags(tags, options, preview)
 
+    def get_tag_names(self, options=[], preview=""):
+        tags = self._command_runner.check_output(['git', '--no-pager', 'tag']).decode()
+        return self.get_tag_name_from_tags(tags, options, preview, '--multi')
+
     def get_tag_name_remote(self, remote, options=[], preview=""):
         tags = self.get_remote_tags(remote)
         return self.get_tag_name_from_tags('\n'.join(tags), options, preview)
+
+    def get_tag_names_remote(self, remote, options=[], preview=""):
+        tags = self.get_remote_tags(remote)
+        return self.get_tag_name_from_tags('\n'.join(tags), options, preview, '--multi')
 
     def get_local_tag_name(self, remote, options = [], preview=""):
         format_columns = FormatColumns()

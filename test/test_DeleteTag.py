@@ -10,10 +10,11 @@ class TestDeleteTag(unittest.TestCase):
 
     def test_run(self):
         tag = 'foo'
+        tags = [tag]
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
-        git_data_getter.get_tag_name = MagicMock(return_value=tag)
-        
+        git_data_getter.get_tag_names = MagicMock(return_value=tags)
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         delete_tag = DeleteTag(hist_command_runer, git_data_getter)
