@@ -14,7 +14,7 @@ class TestDeleteBranch(unittest.TestCase):
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_branch_names = MagicMock(return_value=branches)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         delete_branch = DeleteBranch(hist_command_runer, git_data_getter)

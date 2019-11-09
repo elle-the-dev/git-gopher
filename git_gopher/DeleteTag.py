@@ -6,7 +6,8 @@ class DeleteTag(CommandInterface):
         self._git_data_getter = git_data_getter
 
     def run(self):
-        tag = self._git_data_getter.get_tag_name(preview='echo "git tag -d {2}"')
+        tags = self._git_data_getter.get_tag_names(preview='echo "git tag -d {2}"')
 
-        if tag:
-            self._hist_command_runer.run(['git', 'tag', '-d', tag])
+        if tags:
+            for tag in tags:
+                self._hist_command_runer.run(['git', 'tag', '-d', tag])
