@@ -16,4 +16,4 @@ class CherryPick(CommandInterface):
         if not hash:
             return
 
-        self._hist_command_runer.run(['git', 'cherry-pick', '-e', hash])
+        return self._hist_command_runer.run(['git', 'cherry-pick', '-e', hash])

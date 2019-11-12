@@ -9,4 +9,4 @@ class StashMessage(CommandInterface):
         stash_message = self._git_data_getter.get_stash_message_from_input('git stash push -m "[your message here]"')
 
         if stash_message:
-            self._hist_command_runer.run(['git', 'stash', 'push', '-m', stash_message])
+            return self._hist_command_runer.run(['git', 'stash', 'push', '-m', stash_message])

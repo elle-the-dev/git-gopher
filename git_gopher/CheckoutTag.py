@@ -14,4 +14,4 @@ class CheckoutTag(CommandInterface):
             return
 
         if tag:
-            self._hist_command_runer.run(['git', 'checkout', tag])
+            return self._hist_command_runer.run(['git', 'checkout', tag])

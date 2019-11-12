@@ -11,4 +11,4 @@ class TrackRemote(CommandInterface):
         remote = self._git_data_getter.get_remote_name(preview=preview)
 
         if remote:
-            self._hist_command_runer.run(['git', 'branch', branch, '-u', remote + '/' + branch])
+            return self._hist_command_runer.run(['git', 'branch', branch, '-u', remote + '/' + branch])

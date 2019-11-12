@@ -9,17 +9,19 @@ class DeleteBranch(CommandInterface):
         branches = self._git_data_getter.get_branch_names(preview='echo "git branch -d {2}"')
 
         if branches:
+            output = ""
             for branch in branches:
                 response = self._hist_command_runer.run(['git', 'branch', '-d', branch]).decode()
                 if 'not fully merged' in response:
-                    self.confirm_force_delete(branch)
+                    output += self.confirm_force_delete(branch)
+                else:
+                    output += response
 
     def confirm_force_delete(self, branch):
         yesOrNo = None
         while True:
             yesOrNo = self._git_data_getter.get_confirm_force_delete(branch)
             if yesOrNo == 'y':
-                self._hist_command_runer.run(['git', 'branch', '-D', branch])
-                break
+                return self._hist_command_runer.run(['git', 'branch', '-D', branch]).decode()
             elif yesOrNo == 'n':
                 break

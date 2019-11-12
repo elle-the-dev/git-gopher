@@ -9,4 +9,4 @@ class StashApply(CommandInterface):
         stash = self._git_data_getter.get_stash_ref(preview='echo "git stash apply {1}"')
 
         if stash:
-            self._hist_command_runer.run(['git', 'stash', 'apply', stash])
+            return self._hist_command_runer.run(['git', 'stash', 'apply', stash])

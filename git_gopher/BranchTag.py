@@ -15,4 +15,4 @@ class BranchTag(CommandInterface):
 
         if from_tag:
             new_branch_name = self._git_data_getter.get_branch_name_from_input()
-            self._hist_command_runer.run(['git', 'checkout', '-b', new_branch_name, from_tag])
+            return self._hist_command_runer.run(['git', 'checkout', '-b', new_branch_name, from_tag])

@@ -16,4 +16,4 @@ class DifftoolCommitsDirDiff(CommandInterface):
         if not commit2:
             return
 
-        self._hist_command_runer.run_foreground(['git', 'difftool', commit1, commit2, '--dir-diff'])
+        return self._hist_command_runer.run_foreground(['git', 'difftool', commit1, commit2, '--dir-diff'])

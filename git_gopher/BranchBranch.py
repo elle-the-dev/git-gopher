@@ -10,4 +10,4 @@ class BranchBranch(CommandInterface):
 
         if from_branch:
             new_branch_name = self._git_data_getter.get_branch_name_from_input()
-            self._hist_command_runer.run(['git', 'checkout', '-b', new_branch_name, from_branch])
+            return self._hist_command_runer.run(['git', 'checkout', '-b', new_branch_name, from_branch])

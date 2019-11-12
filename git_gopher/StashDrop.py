@@ -9,4 +9,4 @@ class StashDrop(CommandInterface):
         stash = self._git_data_getter.get_stash_ref(preview='echo "git stash drop {1}"')
 
         if stash:
-            self._hist_command_runer.run(['git', 'stash', 'drop', stash])
+            return self._hist_command_runer.run(['git', 'stash', 'drop', stash])

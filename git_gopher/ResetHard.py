@@ -9,4 +9,4 @@ class ResetHard(CommandInterface):
         hash = self._git_data_getter.get_commit_hash(preview='echo "git reset --hard {1}"')
 
         if hash:
-            self._hist_command_runer.run(['git', 'reset', '--hard', hash])
+            return self._hist_command_runer.run(['git', 'reset', '--hard', hash])

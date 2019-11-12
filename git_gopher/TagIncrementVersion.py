@@ -11,4 +11,4 @@ class TagIncrementVersion(CommandInterface):
         preview = 'echo "git tag $(ggo-get-incremented-version ' + most_recent_tag + ' {2})"'
         semantic_part = self._git_data_getter.get_semantic_part(preview=preview)
         new_version = self._version_incrementer.increment(most_recent_tag, semantic_part)
-        self._hist_command_runer.run(['git', 'tag', new_version])
+        return self._hist_command_runer.run(['git', 'tag', new_version])

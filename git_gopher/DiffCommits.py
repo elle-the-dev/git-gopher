@@ -16,4 +16,4 @@ class DiffCommits(CommandInterface):
         if not commit2:
             return
 
-        self._hist_command_runer.run_foreground(['git', 'diff', commit1, commit2])
+        return self._hist_command_runer.run_foreground(['git', 'diff', commit1, commit2])

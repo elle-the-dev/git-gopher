@@ -9,4 +9,4 @@ class CheckoutBranch(CommandInterface):
         branch = self._git_data_getter.get_branch_name(preview='echo "git checkout {2}"')
 
         if branch:
-            self._hist_command_runer.run(['git', 'checkout', branch])
+            return self._hist_command_runer.run(['git', 'checkout', branch])
