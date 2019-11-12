@@ -31,7 +31,7 @@ class TestDeleteBranch(unittest.TestCase):
         git_data_getter.get_confirm_force_delete = MagicMock(return_value="y")
 
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
-        hist_command_runer.run = MagicMock(return_value=b"error: not fully merged")
+        hist_command_runer.run = MagicMock(return_value="error: not fully merged")
         delete_branch = DeleteBranch(hist_command_runer, git_data_getter)
         delete_branch.run()
 

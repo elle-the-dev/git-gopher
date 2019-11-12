@@ -11,7 +11,7 @@ class DeleteBranch(CommandInterface):
         if branches:
             output = ""
             for branch in branches:
-                response = self._hist_command_runer.run(['git', 'branch', '-d', branch]).decode()
+                response = self._hist_command_runer.run(['git', 'branch', '-d', branch])
                 if 'not fully merged' in response:
                     output += self.confirm_force_delete(branch)
                 else:
@@ -22,6 +22,6 @@ class DeleteBranch(CommandInterface):
         while True:
             yesOrNo = self._git_data_getter.get_confirm_force_delete(branch)
             if yesOrNo == 'y':
-                return self._hist_command_runer.run(['git', 'branch', '-D', branch]).decode()
+                return self._hist_command_runer.run(['git', 'branch', '-D', branch])
             elif yesOrNo == 'n':
                 break

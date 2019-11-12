@@ -9,7 +9,7 @@ from git_gopher.NoTagsException import NoTagsException
 class TestGitDataGetter(unittest.TestCase):
 
     def test_get_current_branch_name(self):
-        branch = b'foo'
+        branch = 'foo'
         command_runner = CommandRunner()
         command_runner.check_output = MagicMock(return_value=branch)
 
@@ -22,7 +22,7 @@ class TestGitDataGetter(unittest.TestCase):
     def test_get_branch_name(self):
         branch = 'foo'
         command_runner = CommandRunner()
-        command_runner.check_output = MagicMock(return_value=b"branch | bar")
+        command_runner.check_output = MagicMock(return_value="branch | bar")
         fzf = Fzf()
         fzf.run = MagicMock(return_value="branch\t" + branch)
 
@@ -33,7 +33,7 @@ class TestGitDataGetter(unittest.TestCase):
     def test_get_tag_name_from_tags(self):
         tag = 'foo'
         command_runner = CommandRunner()
-        command_runner.check_output = MagicMock(return_value=b"tag | bar")
+        command_runner.check_output = MagicMock(return_value="tag | bar")
         fzf = Fzf()
         fzf.run = MagicMock(return_value="tag\t" + tag)
 
@@ -44,7 +44,7 @@ class TestGitDataGetter(unittest.TestCase):
     def test_get_tag_name_from_tags_throws_exception_on_no_tags(self):
         tag = 'foo'
         command_runner = CommandRunner()
-        command_runner.check_output = MagicMock(return_value=b"")
+        command_runner.check_output = MagicMock(return_value="")
         fzf = Fzf()
         fzf.run = MagicMock(return_value="tag\t" + tag)
 
@@ -56,7 +56,7 @@ class TestGitDataGetter(unittest.TestCase):
         commit = 'afe786e5'
         output = commit + '\t1 day ago\tFoo Bar\tSomething something commit'
         command_runner = CommandRunner()
-        command_runner.check_output = MagicMock(return_value=b'')
+        command_runner.check_output = MagicMock(return_value='')
         fzf = Fzf()
         fzf.run = MagicMock(return_value=output)
 
