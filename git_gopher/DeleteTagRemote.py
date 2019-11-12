@@ -11,12 +11,12 @@ class DeleteTagRemote(CommandInterface):
         if not remote:
             return
 
-        tags = self._git_data_getter.get_tag_names_remote(remote, preview='echo "git tag -d {2}"')
+        tags = self._git_data_getter.get_tag_names_remote(remote, preview='echo "git tag -d {2} && git push "' + remote + ' {2}"')
 
         if tags:
             output = ''
             for tag in tags:
                 self._hist_command_runer.run(['git', 'tag', '-d', tag])
-                self._hist_command_runer.run(['git', 'push', remote, ':refs/tags/' + tag])
+                self._hist_command_runer.run(['git', 'push', '--delete', remote, tag])
                 output = output + "\nDeleted tag " + tag + " on " + remote
             return output
