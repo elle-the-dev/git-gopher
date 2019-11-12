@@ -9,5 +9,4 @@ class MergeBranch(CommandInterface):
         branch = self._git_data_getter.get_branch_name(preview='echo "git merge {2}"')
 
         if branch:
-            self._hist_command_runer.run(['git', 'merge', branch])
-            return 'Merged branch ' + branch
+            return self._hist_command_runer.run(['git', 'merge', branch])

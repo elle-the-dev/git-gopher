@@ -9,4 +9,4 @@ class StashPop(CommandInterface):
         stash = self._git_data_getter.get_stash_ref(preview='echo "git stash pop {1}"')
 
         if stash:
-            self._hist_command_runer.run(['git', 'stash', 'pop', stash])
+            return self._hist_command_runer.run(['git', 'stash', 'pop', stash])

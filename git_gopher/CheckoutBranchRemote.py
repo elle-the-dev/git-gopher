@@ -14,4 +14,4 @@ class CheckoutBranchRemote(CommandInterface):
             return
 
         cmd = self._git_data_getter.checkout_branch_remote_command(branch)
-        self._hist_command_runer.run(cmd)
+        return self._hist_command_runer.run(cmd)

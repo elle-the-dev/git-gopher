@@ -9,4 +9,4 @@ class Fetch(CommandInterface):
         remote = self._git_data_getter.get_remote_name(preview='echo "git fetch {2}"')
 
         if remote:
-            self._hist_command_runer.run(['git', 'fetch', remote])
+            return self._hist_command_runer.run(['git', 'fetch', remote])

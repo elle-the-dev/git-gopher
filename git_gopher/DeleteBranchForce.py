@@ -9,5 +9,7 @@ class DeleteBranchForce(CommandInterface):
         branches = self._git_data_getter.get_branch_names(preview='echo "git branch -D {2}"')
 
         if branches:
+            output = ""
             for branch in branches:
-                self._hist_command_runer.run(['git', 'branch', '-D', branch])
+                output += self._hist_command_runer.run(['git', 'branch', '-D', branch])
+            return output
