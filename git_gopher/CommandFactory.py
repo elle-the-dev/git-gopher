@@ -44,104 +44,104 @@ class CommandFactory:
         command_runner = CommandRunner()
         self._fzf = Fzf()
         self._git_data_getter = GitDataGetter(self._fzf, command_runner)
-        self._hist_command_runer = HistoryCommandRunner(self._git_data_getter, command_runner)
+        self._hist_command_runner = HistoryCommandRunner(self._git_data_getter, command_runner)
 
     def menu(self):
         options = Options()
-        return Menu(self._hist_command_runer, self._fzf, options)
+        return Menu(self._hist_command_runner, self._fzf, options)
 
     def checkout_branch(self):
-        return CheckoutBranch(self._hist_command_runer, self._git_data_getter)
+        return CheckoutBranch(self._hist_command_runner, self._git_data_getter)
 
     def checkout_branch_remote(self):
-        return CheckoutBranchRemote(self._hist_command_runer, self._git_data_getter)
+        return CheckoutBranchRemote(self._hist_command_runner, self._git_data_getter)
 
     def checkout_tag(self):
-        return CheckoutTag(self._hist_command_runer, self._git_data_getter)
+        return CheckoutTag(self._hist_command_runner, self._git_data_getter)
 
     def branch_branch(self):
-        return BranchBranch(self._hist_command_runer, self._git_data_getter)
+        return BranchBranch(self._hist_command_runner, self._git_data_getter)
 
     def branch_tag(self):
-        return BranchTag(self._hist_command_runer, self._git_data_getter)
+        return BranchTag(self._hist_command_runner, self._git_data_getter)
 
     def merge_branch(self):
-        return MergeBranch(self._hist_command_runer, self._git_data_getter)
+        return MergeBranch(self._hist_command_runner, self._git_data_getter)
 
     def merge_tag(self):
-        return MergeTag(self._hist_command_runer, self._git_data_getter)
+        return MergeTag(self._hist_command_runner, self._git_data_getter)
 
     def merge_squash(self):
-        return MergeSquash(self._hist_command_runer, self._git_data_getter)
+        return MergeSquash(self._hist_command_runner, self._git_data_getter)
 
     def fetch(self):
-        return Fetch(self._hist_command_runer, self._git_data_getter)
+        return Fetch(self._hist_command_runner, self._git_data_getter)
 
     def track_remote(self):
-        return TrackRemote(self._hist_command_runer, self._git_data_getter)
+        return TrackRemote(self._hist_command_runner, self._git_data_getter)
 
     def upstream_push(self):
-        return UpstreamPush(self._hist_command_runer, self._git_data_getter)
+        return UpstreamPush(self._hist_command_runner, self._git_data_getter)
 
     def push_tag(self):
-        return PushTag(self._hist_command_runer, self._git_data_getter)
+        return PushTag(self._hist_command_runner, self._git_data_getter)
 
     def tag_increment_version(self):
-        return TagIncrementVersion(self._hist_command_runer, self._git_data_getter, VersionIncrementer())
+        return TagIncrementVersion(self._hist_command_runner, self._git_data_getter, VersionIncrementer())
 
     def delete_branch(self):
-        return DeleteBranch(self._hist_command_runer, self._git_data_getter)
+        return DeleteBranch(self._hist_command_runner, self._git_data_getter)
 
     def delete_branch_force(self):
-        return DeleteBranchForce(self._hist_command_runer, self._git_data_getter)
+        return DeleteBranchForce(self._hist_command_runner, self._git_data_getter)
 
     def delete_branch_remote(self):
-        return DeleteBranchRemote(self._command_runner, self._git_data_getter)
+        return DeleteBranchRemote(self._hist_command_runner, self._git_data_getter)
 
     def delete_tag(self):
-        return DeleteTag(self._hist_command_runer, self._git_data_getter)
+        return DeleteTag(self._hist_command_runner, self._git_data_getter)
 
     def delete_tag_remote(self):
-        return DeleteTagRemote(self._hist_command_runer, self._git_data_getter)
+        return DeleteTagRemote(self._hist_command_runner, self._git_data_getter)
 
     def reset(self):
-        return Reset(self._hist_command_runer, self._git_data_getter)
+        return Reset(self._hist_command_runner, self._git_data_getter)
 
     def reset_hard(self):
-        return ResetHard(self._hist_command_runer, self._git_data_getter)
+        return ResetHard(self._hist_command_runner, self._git_data_getter)
 
     def diff_commits(self):
-        return DiffCommits(self._hist_command_runer, self._git_data_getter)
+        return DiffCommits(self._hist_command_runner, self._git_data_getter)
 
     def difftool_commits(self):
-        return DifftoolCommits(self._hist_command_runer, self._git_data_getter)
+        return DifftoolCommits(self._hist_command_runner, self._git_data_getter)
 
     def difftool_commits_dir_diff(self):
-        return DifftoolCommitsDirDiff(self._hist_command_runer, self._git_data_getter)
+        return DifftoolCommitsDirDiff(self._hist_command_runner, self._git_data_getter)
 
     def history(self):
-        return History(self._hist_command_runer, self._git_data_getter)
+        return History(self._hist_command_runner, self._git_data_getter)
 
     def history_dir(self):
-        return HistoryDir(self._hist_command_runer, self._git_data_getter)
+        return HistoryDir(self._hist_command_runner, self._git_data_getter)
 
     def stash_message(self):
-        return StashMessage(self._hist_command_runer, self._git_data_getter)
+        return StashMessage(self._hist_command_runner, self._git_data_getter)
 
     def stash_pop(self):
-        return StashPop(self._hist_command_runer, self._git_data_getter)
+        return StashPop(self._hist_command_runner, self._git_data_getter)
 
     def stash_apply(self):
-        return StashApply(self._hist_command_runer, self._git_data_getter)
+        return StashApply(self._hist_command_runner, self._git_data_getter)
 
     def stash_drop(self):
-        return StashDrop(self._hist_command_runer, self._git_data_getter)
+        return StashDrop(self._hist_command_runner, self._git_data_getter)
 
     def cherry_pick(self):
-        return CherryPick(self._hist_command_runer, self._git_data_getter)
+        return CherryPick(self._hist_command_runner, self._git_data_getter)
 
     def add(self):
-        return Add(self._hist_command_runer, self._git_data_getter, self._fzf)
+        return Add(self._hist_command_runner, self._git_data_getter, self._fzf)
 
     def make(self, cmd) -> CommandInterface:
         switcher = {
