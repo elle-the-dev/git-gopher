@@ -13,7 +13,7 @@ class TestMergeTag(unittest.TestCase):
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_tag_name = MagicMock(return_value=tag)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         merge_tag = MergeTag(hist_command_runer, git_data_getter)
