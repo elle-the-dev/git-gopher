@@ -1,8 +1,10 @@
 from git_gopher.CommandInterface import CommandInterface
+from git_gopher.HistoryCommandRunner import HistoryCommandRunner
+from git_gopher.GitDataGetter import GitDataGetter
 
 class DeleteBranchRemote(CommandInterface):
-    def __init__(self, command_runner, git_data_getter):
-        self._command_runner = command_runner
+    def __init__(self, hist_command_runner: HistoryCommandRunner, git_data_getter: GitDataGetter):
+        self._hist_command_runner = hist_command_runner
         self._git_data_getter = git_data_getter
 
     def run(self):
@@ -16,5 +18,5 @@ class DeleteBranchRemote(CommandInterface):
         if branches:
             output = ""
             for branch in branches:
-                output += self._command_runner.run(['git', 'push', remote, '--delete', branch])
+                output += self._hist_command_runner.run(['git', 'push', remote, '--delete', branch])
             return output

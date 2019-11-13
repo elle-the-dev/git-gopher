@@ -6,7 +6,7 @@ class Colorize:
     def __init__(self):
         self.lexer = None
 
-    def highlight(self, content):
+    def highlight(self, content: str) -> str:
         formatter = TerminalFormatter()
 
         if self.lexer:

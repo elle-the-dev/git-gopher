@@ -1,11 +1,15 @@
 from os import path
+from typing import List
 from colorama import Fore, Style
 from git_gopher.CommandInterface import CommandInterface
 from git_gopher.FormatColumns import FormatColumns
+from git_gopher.HistoryCommandRunner import HistoryCommandRunner
+from git_gopher.GitDataGetter import GitDataGetter
+from git_gopher.Fzf import Fzf
 
 class Add(CommandInterface):
-    def __init__(self, hist_command_runer, git_data_getter, fzf):
-        self._hist_command_runer = hist_command_runer
+    def __init__(self, hist_command_runner: HistoryCommandRunner, git_data_getter: GitDataGetter, fzf: Fzf):
+        self._hist_command_runner = hist_command_runner
         self._git_data_getter = git_data_getter
         self._fzf = fzf
 
@@ -15,9 +19,9 @@ class Add(CommandInterface):
 
         if filepaths:
             for filepath in filepaths:
-                self._hist_command_runer.run(['git', 'add', filepath])
+                self._hist_command_runner.run(['git', 'add', filepath])
 
-    def _get_unstaged_files(self):
+    def _get_unstaged_files(self) -> List[str]:
         unstaged_files = self._git_data_getter.get_unstaged_files().splitlines()
 
         # break up path into subdirectories
@@ -42,7 +46,7 @@ class Add(CommandInterface):
 
         return self._colorize_unstaged_files(unstaged_files)
 
-    def _colorize_unstaged_files(self, unstaged_files):
+    def _colorize_unstaged_files(self, unstaged_files) -> List[str]:
         for i in range(len(unstaged_files)):
             file = unstaged_files[i]
 
@@ -56,7 +60,7 @@ class Add(CommandInterface):
 
         return unstaged_files
 
-    def _get_user_selections(self, unstaged_files):
+    def _get_user_selections(self, unstaged_files) -> List[str]:
         format_columns = FormatColumns()
         preview = "ggo-add-preview {2}"
         filepaths = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(unstaged_files)), preview=preview, preview_window="--preview-window=right", multi="--multi")

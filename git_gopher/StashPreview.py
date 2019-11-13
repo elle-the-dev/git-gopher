@@ -5,9 +5,10 @@ from pygments.lexers import guess_lexer
 from pygments.formatters import TerminalFormatter
 from colorama import Fore, Style
 import shutil
+from git_gopher.GitDataGetter import GitDataGetter
 
 class StashPreview:
-    def __init__(self, git_data_getter):
+    def __init__(self, git_data_getter: GitDataGetter):
         self._git_data_getter = git_data_getter
 
     def preview(self, stash_ref):
@@ -52,6 +53,6 @@ class StashPreview:
 
         return output
 
-    def get_horizontal_line(self):
+    def get_horizontal_line(self) -> str:
         terminal_width = shutil.get_terminal_size().columns
         return "\n" + Fore.YELLOW + (u'\u2500' * terminal_width) + Style.RESET_ALL + "\n"
