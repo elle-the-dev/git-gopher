@@ -1,6 +1,7 @@
 from sys import argv, stdin
 from pygments.lexers.diff import DiffLexer
 from git_gopher.GitGopher import GitGopher
+from git_gopher.CommandRunner import CommandRunner
 from git_gopher.CommandFactory import CommandFactory
 from git_gopher.Options import Options
 from git_gopher.VersionIncrementer import VersionIncrementer
@@ -17,7 +18,7 @@ def get_incremented_version():
     print(VersionIncrementer().increment(argv[1], argv[2]))
 
 def add_preview():
-    add_preview = AddPreview(GitDataGetter(Fzf()))
+    add_preview = AddPreview(GitDataGetter(Fzf(), CommandRunner()))
     print(add_preview.preview(argv[1]))
 
 def colorize():
