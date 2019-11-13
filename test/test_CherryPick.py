@@ -15,7 +15,7 @@ class TestCherryPick(unittest.TestCase):
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_branch_name = MagicMock(return_value=branch)
         git_data_getter.get_commit_hash = MagicMock(return_value=hash)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         cherry_pick = CherryPick(hist_command_runer, git_data_getter)

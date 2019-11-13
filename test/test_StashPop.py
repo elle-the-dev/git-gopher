@@ -13,7 +13,7 @@ class TestStashPop(unittest.TestCase):
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_stash_ref = MagicMock(return_value=stash)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         stash_pop = StashPop(hist_command_runer, git_data_getter)

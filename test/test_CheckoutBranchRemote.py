@@ -15,7 +15,7 @@ class TestCheckoutBranchRemote(unittest.TestCase):
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_branch_name = MagicMock(return_value=branch)
         git_data_getter.checkout_branch_remote_command = MagicMock(return_value=remote_command)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         checkout_branch = CheckoutBranchRemote(hist_command_runer, git_data_getter)

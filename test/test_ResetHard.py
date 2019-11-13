@@ -13,7 +13,7 @@ class TestResetHard(unittest.TestCase):
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_commit_hash = MagicMock(return_value=hash)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         reset_hard = ResetHard(hist_command_runer, git_data_getter)
