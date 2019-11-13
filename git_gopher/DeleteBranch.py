@@ -1,8 +1,10 @@
 from git_gopher.CommandInterface import CommandInterface
+from git_gopher.HistoryCommandRunner import HistoryCommandRunner
+from git_gopher.GitDataGetter import GitDataGetter
 
 class DeleteBranch(CommandInterface):
-    def __init__(self, hist_command_runer, git_data_getter):
-        self._hist_command_runer = hist_command_runer
+    def __init__(self, hist_command_runner: HistoryCommandRunner, git_data_getter: GitDataGetter):
+        self._hist_command_runner = hist_command_runner
         self._git_data_getter = git_data_getter
 
     def run(self):
@@ -11,7 +13,7 @@ class DeleteBranch(CommandInterface):
         if branches:
             output = ""
             for branch in branches:
-                response = self._hist_command_runer.run(['git', 'branch', '-d', branch])
+                response = self._hist_command_runner.run(['git', 'branch', '-d', branch])
                 if 'not fully merged' in response:
                     output += self.confirm_force_delete(branch)
                 else:
@@ -22,6 +24,6 @@ class DeleteBranch(CommandInterface):
         while True:
             yesOrNo = self._git_data_getter.get_confirm_force_delete(branch)
             if yesOrNo == 'y':
-                return self._hist_command_runer.run(['git', 'branch', '-D', branch])
+                return self._hist_command_runner.run(['git', 'branch', '-D', branch])
             elif yesOrNo == 'n':
                 break

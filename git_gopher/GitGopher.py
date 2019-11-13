@@ -1,4 +1,5 @@
 from os import path
+from typing import List, Dict
 from pathlib import Path
 from re import sub
 from subprocess import run
@@ -30,7 +31,7 @@ class GitGopher():
             print("Run the following to see a list of commands:\n")
             print("$ ggo")
 
-    def _get_shortcuts(self):
+    def _get_shortcuts(self) -> Dict[str, str]:
         options = self._options.get().splitlines()
 
         switcher = {}
