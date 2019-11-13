@@ -176,6 +176,7 @@ class CommandFactory:
             'stash-message': self.stash_message,
             'stash-pop': self.stash_pop,
             'stash-apply': self.stash_apply,
+            'stash-drop': self.stash_drop,
         }
 
         func = switcher.get(cmd, lambda: "Error: Unknown command")
