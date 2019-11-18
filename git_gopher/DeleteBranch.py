@@ -26,4 +26,4 @@ class DeleteBranch(CommandInterface):
             if yesOrNo == 'y':
                 return self._hist_command_runner.run(['git', 'branch', '-D', branch])
             elif yesOrNo == 'n':
-                break
+                return ''
