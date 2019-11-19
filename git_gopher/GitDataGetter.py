@@ -39,7 +39,7 @@ class GitDataGetter:
         format_columns = FormatColumns()
         branches = self._command_runner.check_output(['git', 'ls-remote', '--heads', remote])
         branches = list(map(lambda line: 'branch|' + line.split()[1].strip().replace('refs/heads/', ''), branches.splitlines()))
-        lines = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(branches)))
+        lines = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(branches)), multi='--multi')
         return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
 
     def get_tag_name_from_tags(self, tags, options: List[str]=[], preview: str="", multi: str="--no-multi") -> Union[str, List[str]]:
