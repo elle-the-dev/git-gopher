@@ -130,7 +130,7 @@ class GitDataGetter:
         stash = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format(stashes), preview=preview, preview_window="--preview-window=right")
 
         if stash:
-            return stash.split('\t')[0]
+            return stash.split('\t')[0].strip()
 
     def get_git_dir(self) -> str:
         return self._command_runner.check_output(['git', 'rev-parse', '--show-toplevel']).strip()
