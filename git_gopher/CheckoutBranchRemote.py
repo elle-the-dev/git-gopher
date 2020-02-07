@@ -10,7 +10,7 @@ class CheckoutBranchRemote(CommandInterface):
 
     def run(self):
         DIR = path.dirname(path.realpath(__file__))
-        branch = self._git_data_getter.get_branch_name(options=['--all'], preview=DIR+'/_checkout-branch-remote-command {2}')
+        branch = self._git_data_getter.get_branch_name(options=['--all'], preview='ggo-checkout-branch-remote-preview {2}')
 
         if not branch:
             return
