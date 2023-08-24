@@ -22,3 +22,4 @@ create_symlink gg-delete
 create_symlink gg-upstream-push
 create_symlink gg-get-branch-name
 create_symlink gg-get-tag-name
+create_symlink gg-push-tag

@@ -18,3 +18,4 @@ remove_symlink gg-delete
 remove_symlink gg-upstream-push
 remove_symlink gg-get-branch-name
 remove_symlink gg-get-tag-name
+remove_symlink gg-push-tag
