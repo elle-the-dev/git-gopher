@@ -1,6 +1,7 @@
 gud checkout-branch                   | c     | Checkout a local branch
 gud checkout-branch-remote            | cr    | Checkout a local or remote branch
 gud checkout-tag                      | ct    | Checkout a tag
+gud branch-branch                     | bb    | Create a new branch from another branch
 gud branch-tag                        | bt    | Create a new branch from a tag
 gud merge-branch                      | m     | Merge a branch into the current branch
 gud merge-tag                         | mt    | Merge a tag into the current branch
