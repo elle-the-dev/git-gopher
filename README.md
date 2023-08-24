@@ -1,4 +1,4 @@
-# git-gud
+# git-gopher
 
 Improving the Git CLI experience with fzf
 
@@ -6,11 +6,11 @@ Improving the Git CLI experience with fzf
 
 ## What is this?
 
-Rather than needing to remember the exact name of the branch, tag or remote, or the exact syntax of the different git commands needed, **git-gud** will provide a list to choose from.
+Rather than needing to remember the exact name of the branch, tag or remote, or the exact syntax of the different git commands needed, **git-gopher** will provide a list to choose from.
 
 By using `fzf` for these lists, finding and choosing which item can be done by fuzzy searching the text.
 
-And unlike the git GUIs out there, **git-gud** will say exactly what it's doing by displaying the command it will run before the selection is made.
+And unlike the git GUIs out there, **git-gopher** will say exactly what it's doing by displaying the command it will run before the selection is made.
 
 ## Requirements
 
@@ -27,20 +27,20 @@ To use syntax highlighting in commands with preview windows like `stash-pop`, [b
 Install via pip
 
 ```
-pip3 install gitgud
+pip3 install git_gopher
 ```
 
 ## Usage
 
-**gid-gud** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
+**gid-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
 
 ### Menu
 
-The `gud` command with no arguments will bring up a fzf list of all the commands that git-gud provides, as well as additional standard git commands.
+The `ggo` command with no arguments will bring up a fzf list of all the commands that git-gopher provides, as well as additional standard git commands.
 
 ![image](https://i.imgur.com/5HA1oqV.png)
 
-Custom commands can be added to menu by creating `~/.gud-options` with the options listed in it, one per line, with the command, shortcut, and description separated by `|`.
+Custom commands can be added to menu by creating `~/ggo-options.dat` with the options listed in it, one per line, with the command, shortcut, and description separated by `|`.
 
 Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted into `columns` and the two spaces are how the command column is delimited.
 
@@ -55,10 +55,10 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
-Run any command or alias by passing it to the `gud` command
+Run any command or alias by passing it to the `ggo` command
 
 ```
-gud [command|alias]
+ggo [command|alias]
 ```
 
 | command                    | alias | description                                                         |

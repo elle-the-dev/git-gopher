@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import MagicMock, call
-from gitgud.Fzf import Fzf
-from gitgud.GitDataGetter import GitDataGetter
-from gitgud.CommandRunner import CommandRunner
-from gitgud.DeleteTagRemote import DeleteTagRemote
+from git_gopher.Fzf import Fzf
+from git_gopher.GitDataGetter import GitDataGetter
+from git_gopher.CommandRunner import CommandRunner
+from git_gopher.DeleteTagRemote import DeleteTagRemote
 
 class TestDeleteTagRemote(unittest.TestCase):
 

@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import MagicMock
-from gitgud.Fzf import Fzf
-from gitgud.GitDataGetter import GitDataGetter
-from gitgud.CommandRunner import CommandRunner
-from gitgud.StashApply import StashApply
+from git_gopher.Fzf import Fzf
+from git_gopher.GitDataGetter import GitDataGetter
+from git_gopher.CommandRunner import CommandRunner
+from git_gopher.StashApply import StashApply
 
 class TestStashApply(unittest.TestCase):
 
