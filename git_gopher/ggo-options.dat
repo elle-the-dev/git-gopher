@@ -14,6 +14,7 @@ ggo push-tag                         | pt    | Push a tag to remote
 ggo tag-increment-version            | tiv   | Create a new tag, incremented by major, minor or patch
 ggo delete-branch                    | d     | Delete a branch
 ggo delete-branch-force              | df    | Force delete a branch
+ggo delete-branch-remote             | dr    | Delete a branch on a selected remote
 ggo delete-tag                       | dt    | Delete a tag locally
 ggo delete-tag-remote                | dtr   | Delete a tag both locally and on remote
 ggo reset                            | rs    | Unstage changes after the selected commit
