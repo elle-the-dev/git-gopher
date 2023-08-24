@@ -67,7 +67,7 @@ alias ggrs="gg-reset"
 alias ggrsh="gg-reset-hard"
 ```
 
-**The aliases will apply to the next time the terminal is opened**
+_The aliases will apply to the next time the terminal is opened_
 
 ## Usage
 
