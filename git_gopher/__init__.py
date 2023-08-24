@@ -21,5 +21,10 @@ def add_preview():
     add_preview = AddPreview(GitDataGetter(Fzf(), CommandRunner()))
     print(add_preview.preview(argv[1]))
 
+def checkout_branch_remote_preview():
+    git_data_getter = GitDataGetter(Fzf(), CommandRunner())
+    cmd = git_data_getter.checkout_branch_remote_command(argv[1])
+    print(' '.join(cmd))
+
 def colorize():
     print(Colorize().set_lexer(DiffLexer()).highlight(stdin.read()))
