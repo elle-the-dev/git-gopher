@@ -1,6 +1,7 @@
 gg-checkout-branch                 | Checkout a local branch
 gg-checkout-branch-remote          | Checkout a local or remote branch
 gg-checkout-tag                    | Checkout a tag
+gg-branch-tag                      | Create a new branch from a tag
 gg-merge-branch                    | Merge a branch into the current branch
 gg-merge-tag                       | Merge a tag into the current branch
 gg-merge-squash                    | Merge and squash a branch into the current branch

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+SCRIPT=`realpath $0`
+DIR=`dirname $SCRIPT`
+source "$DIR/.run-command"
+
 tags=$(git tag)
 tag=$(echo "$tags" | fzf --preview='echo "Select a tag. No action is taken until selecting a remote."' --preview-window down:5)
 
@@ -15,5 +20,5 @@ if [ -z "$target" ]; then
 fi
 
 remote=$(echo "$target" | awk '{print $1}')
-git tag -d "$tag"
-git push "$remote" ":refs/tags/$tag"
+run_command "git tag -d $tag"
+run_command "git push $remote :refs/tags/$tag"
