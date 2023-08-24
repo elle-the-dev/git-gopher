@@ -37,6 +37,14 @@ Also, `$PATH` should contain the pip bin directory. That would look something li
 PATH="$PATH:~/.local/bin"
 ```
 
+## Updating
+
+Updating to the latest version is also done via `pip`
+
+```
+pip3 install --no-cache-dir --upgrade git-gopher
+```
+
 ## Usage
 
 **gid-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
