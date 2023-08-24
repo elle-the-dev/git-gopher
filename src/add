@@ -9,6 +9,7 @@ add () {
         # so we can include directories in the list to add
         splits=$(echo "$file" | sed -e "s/\//\n/g" | sed '$d')
         path=""
+
         while read -r split; do
             # remove leading slash so path is relative
             path=$(echo "$path/$split" | sed "s#^/##g")
@@ -24,6 +25,11 @@ add () {
     # Colorize the options, prefixing either "dir" or "file"
     list=""
     while read -r file; do
+        is_tracked=$(git ls-files "$file")
+        if [ -z "$is_tracked" ]; then
+            file="\x1b[31;1m$file\x1b[m"
+        fi
+
         if [ -d "$file" ]; then
             list=$(printf "\x1b[36;1mdir\x1b[m\t$file\n$list")
         else
