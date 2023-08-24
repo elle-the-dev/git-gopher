@@ -9,5 +9,8 @@ class DeleteTag(CommandInterface):
         tags = self._git_data_getter.get_tag_names(preview='echo "git tag -d {2}"')
 
         if tags:
+            output = ''
             for tag in tags:
                 self._hist_command_runer.run(['git', 'tag', '-d', tag])
+                output = output + "\nDeleted tag " + tag
+            return output

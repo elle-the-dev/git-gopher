@@ -182,7 +182,8 @@ class GitDataGetter:
     def get_branch_name_from_input(self):
         return input("New branch name: ")
 
-    def get_stash_message_from_input(self):
+    def get_stash_message_from_input(self, preview=''):
+        print(preview)
         return input("Message: ")
 
     def _prefix_lines_with(self, lines, prefix: str):

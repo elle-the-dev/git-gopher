@@ -13,7 +13,6 @@ class PushTag(CommandInterface):
             return
 
         tag = self._git_data_getter.get_local_tag_name(remote, preview='echo "git push -u ' + remote + ' {2}"')
-        print(tag)
 
         if tag:
             self._hist_command_runer.run(['git', 'push', '-u', remote, tag])
