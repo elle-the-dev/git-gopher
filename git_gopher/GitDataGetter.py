@@ -93,7 +93,7 @@ class GitDataGetter:
     def get_stash_ref(self, preview=""):
         format_columns = FormatColumns()
         DIR = path.dirname(path.realpath(__file__))
-        preview = "echo {1} | awk -F'\t' '{print $1}' | xargs git stash show -p | cat <(echo -n \"" + preview + "\n\nALT+J: Down | ALT+K: Up\n----------------------------\n\n\") - | " + DIR + "/_colorize -lDiff"
+        preview = "echo {1} | xargs git stash show -p | cat <(echo -n \"" + preview + "\n\nALT+J: Down | ALT+K: Up\n----------------------------\n\n\") - | ggo-colorize"
         stashes = '\n'.join(list(map(lambda line: sub(':', ' |', line), check_output(['git', 'stash', 'list']).decode().splitlines())))
         stash = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format(stashes), preview=preview, preview_window="--preview-window=right")
 
@@ -121,6 +121,12 @@ class GitDataGetter:
         selection = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format(options), preview=preview)
         if selection:
             return selection.split('\t')[1].strip()
+
+    def get_diff(self, file_path):
+        return check_output(['git', 'diff', file_path]).decode()
+
+    def get_stash_contents(self, stash_ref):
+        return check_output(['git', 'stash', 'show', '-p', stash_ref]).decode()
 
     def remote_branch_exists(self, remote: str):
         try:
