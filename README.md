@@ -2,7 +2,7 @@
 
 Improving the Git CLI experience with fzf
 
-![image](https://i.imgur.com/caoe79G.gif)
+![image](https://i.imgur.com/qybpzjB.gif)
 
 ## What is this?
 
@@ -60,7 +60,7 @@ To update `git-gud` simply pull the latest version. Since install creates a syml
 
 The `gud` command with no arguments will bring up a fzf list of all the commands that git-gud provides, as well as additional standard git commands.
 
-![image](https://i.imgur.com/BO7rhuw.png)
+![image](https://i.imgur.com/5HA1oqV.png)
 
 Custom commands can be added to menu by creating `~/.gud-options` with the options listed in it, one per line, with the command, shortcut, and description separated by `|`.
 
