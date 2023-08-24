@@ -7,13 +7,13 @@ remove_symlink () {
 }
 
 remove_symlink gg-menu
-remove_symlink gg-checkout
-remove_symlink gg-checkout-all
+remove_symlink gg-checkout-branch
+remove_symlink gg-checkout-branch-remote
 remove_symlink gg-checkout-tag
 remove_symlink gg-branch-tag
-remove_symlink gg-merge
+remove_symlink gg-merge-branch
 remove_symlink gg-merge-tag
-remove_symlink gg-merge-tag
+remove_symlink gg-merge-squash
 remove_symlink gg-upstream-push
 remove_symlink gg-get-branch-name
 remove_symlink gg-get-tag-name

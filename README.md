@@ -28,19 +28,19 @@ With or without the install script, to use the command aliases, the following de
 
 ```
 alias gg="gg-menu"
-alias ggc="gg-checkout"
-alias ggca="gg-checkout-all"
+alias ggc="gg-checkout-branch"
+alias ggcr="gg-checkout-branch-remote"
 alias ggct="gg-checkout-tag"
 alias ggbt="gg-branch-tag"
-alias ggm="gg-merge"
+alias ggm="gg-merge-branch"
 alias ggmt="gg-merge-tag"
 alias ggms="gg-merge-squash"
 alias ggup="gg-upstream-push"
-alias ggup="gg-push-tag"
+alias ggpt="gg-push-tag"
 alias ggdb="gg-delete-branch"
 alias ggdbf="gg-delete-branch-force"
-alias ggdt="git-delete-tag"
-alias ggdtr="git-delete-tag-remote"
+alias ggdt="gg-delete-tag"
+alias ggdtr="gg-delete-tag-remote"
 ```
 ## Usage
 
@@ -48,19 +48,19 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
-| command                | alias     | description                                              |
-| --------------------   | --------- | -------------------------------------------------------- |
-| gg-menu                | gg        | Open menu with these commands                            |
-| gg-checkout            | ggc       | Checkout a local branch                                  |
-| gg-checkout-all        | ggca      | Checkout a local or remote branch                        |
-| gg-checkout-tag        | ggct      | Checkout a tag                                           |
-| gg-branch-tag          | ggbt      | Create and checkout a new branch from a tag              |
-| gg-merge               | ggm       | Merge a branch into the current branch                   |
-| gg-merge-tag           | ggmt      | Merge a tag into the current branch                      |
-| gg-merge-squash        | ggms      | Merge and squash a branch into the current branch        |
-| gg-delete-branch       | ggd       | Delete a branch                                          |
-| gg-delete-branch-force | ggdf      | Force delete a branch                                    |
-| gg-delete-tag          | ggdt      | Delete a tag locally                                     |
-| gg-delete-tag-remote   | ggdtr     | Delete a tag both locally and on remote                  |
-| gg-upstream-push       | ggup      | Push the current branch to remote, setting the upstream  |
-| gg-push-tag            | ggpt      | Push a tag to a remote                                   |
+| command                   | alias     | description                                              |
+| --------------------      | --------- | -------------------------------------------------------- |
+| gg-menu                   | gg        | Open menu with these commands                            |
+| gg-checkout-branch        | ggc       | Checkout a local branch                                  |
+| gg-checkout-branch-remote | ggcr      | Checkout a local or remote branch                        |
+| gg-checkout-tag           | ggct      | Checkout a tag                                           |
+| gg-branch-tag             | ggbt      | Create and checkout a new branch from a tag              |
+| gg-merge-branch           | ggm       | Merge a branch into the current branch                   |
+| gg-merge-tag              | ggmt      | Merge a tag into the current branch                      |
+| gg-merge-squash           | ggms      | Merge and squash a branch into the current branch        |
+| gg-delete-branch          | ggd       | Delete a branch                                          |
+| gg-delete-branch-force    | ggdf      | Force delete a branch                                    |
+| gg-delete-tag             | ggdt      | Delete a tag locally                                     |
+| gg-delete-tag-remote      | ggdtr     | Delete a tag both locally and on remote                  |
+| gg-upstream-push          | ggup      | Push the current branch to remote, setting the upstream  |
+| gg-push-tag               | ggpt      | Push a tag to a remote                                   |
