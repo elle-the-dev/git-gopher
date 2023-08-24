@@ -29,12 +29,16 @@ cmds['dit']="difftool-commits"
 cmds['dd']="difftool-commits-dir-diff"
 cmds['h']="history"
 cmds['hd']="history-dir"
+cmds['sta']="stash-apply"
+cmds['stp']="stash-pop"
+cmds['stm']="stash-message"
 
 # common functions used in commands
 source "$DIR/_run-command"
 source "$DIR/_get-branch-name"
 source "$DIR/_get-tag-name"
 source "$DIR/_get-commit-hash"
+source "$DIR/_get-stash-ref"
 
 if [ -v cmds[$1] ]; then
     # a short cut was used
