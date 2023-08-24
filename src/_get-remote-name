@@ -2,6 +2,6 @@
 
 get-remote-name () {
     remotes=$(git remote -v | uniq)
-    remote=$(echo "$remotes" | grep push | fzf --preview="eval $1" --preview-window down:5)
-    echo $remote | awk '{print $1}'
+    remote=$(echo "$remotes" | grep push | awk -F' ' '{printf("\x1b[34;1m%-6s\t\x1b[33;1m%-15s\x1b[m\t%s\n", "remote", $1, $2)}' | fzf --ansi --preview="eval $1" --preview-window down:5)
+    echo $remote | awk '{print $2}'
 }
