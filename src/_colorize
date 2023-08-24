@@ -2,7 +2,7 @@
 
 input=$(cat)
 
-if [ -x $(command -v bat) ]; then
+if [ -n $(command -v bat) ]; then
     if [ -n "$1" ]; then
         echo "$input" | bat -pp --color=always --style=numbers "$1"
     else
