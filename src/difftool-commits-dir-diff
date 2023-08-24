@@ -1,13 +1,13 @@
 #!/bin/bash
 
 difftool-commits-dir-diff () {
-    commit1=$(get-commit-hash 'echo "First of two commits to compare"')
+    commit1=$(get-commit-hash "" 'echo "First of two commits to compare"')
 
     if [ -z "$commit1" ]; then
         exit
     fi
 
-    commit2=$(get-commit-hash "echo \"git difftool $commit1 {1} --dir-diff\"")
+    commit2=$(get-commit-hash "" "echo \"git difftool $commit1 {1} --dir-diff\"")
 
     if [ -z "$commit2" ]; then
         exit
