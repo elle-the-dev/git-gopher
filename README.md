@@ -54,7 +54,7 @@ pip3 install --no-cache-dir --upgrade git-gopher
 
 ## Usage
 
-**gid-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
+**git-gopher** is run from the command line, same as `git`. The commands will be standard git commands, as if running them directly in the current working directory.
 
 ### Menu
 
