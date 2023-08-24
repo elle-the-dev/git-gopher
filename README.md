@@ -32,7 +32,7 @@ To automatically configure, run
 sudo ./install.sh
 ```
 
-which will symlink the `gud` to `/usr/local/bin`
+which will symlink the `gud` command to `/usr/local/bin`
 
 To use a different install directory, pass it as the first argument to the command
 
@@ -40,7 +40,7 @@ To use a different install directory, pass it as the first argument to the comma
 sudo ./install.sh ~/.local/bin
 ```
 
-An uninstall script is also provided to remove the symlinks. If a custom install path was provided, it will have been saved to `~/.config/git-gud/install-dir` and use that. Uninstalling will also delete `~/.config/git-gud`
+An uninstall script is also provided to remove any symlinks and files created. If a custom install path was provided, it will have been saved to `~/.config/git-gud/install-dir` and use that. Uninstalling will also delete `~/.config/git-gud`
 
 ```
 sudo ./uninstall.sh
