@@ -71,6 +71,8 @@ git dosomething      | shortcut  | Description of my command
 git dosomethingelse  | shortcut2 | Description of my other command
 ```
 
+To see any changes to custom commands, **the cache must be cleared using `gud clear`**.
+
 ### Individual commands
 
 There are several commands added to make use of `fzf` and make interacting with basic git commands faster and easier.
