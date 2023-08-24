@@ -2,10 +2,17 @@
 
 tags=$(
   git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}' | tac) || exit
+
+if [ -n "$2" ]; then
+    preview=$2
+else
+    preview="git config branch.{2}.description"
+fi
+
 target=$(
   (echo "$tags") |
   fzf --no-hscroll --no-multi -n 2 \
-      --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || exit
+      --ansi --preview="eval $preview" --preview-window down:5) || exit
 
 if [ -n "$target" ]; then
     echo "$target"
