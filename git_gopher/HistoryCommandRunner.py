@@ -12,14 +12,14 @@ class HistoryCommandRunner:
         try:
             return self._command_runner.check_output(cmd)
         except CalledProcessError as e:
-            return e.output
+            return e.output.decode()
 
     def run_foreground(self, cmd: list):
         self._write_history(cmd)
         try:
             return self._command_runner.run(cmd)
         except CalledProcessError as e:
-            return e.output
+            return e.output.decode()
 
     def _write_history(self, cmd: list):
         config_dir = path.expanduser("~") + "/.config/git-gopher"
