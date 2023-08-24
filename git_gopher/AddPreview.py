@@ -4,13 +4,14 @@ from pygments import highlight
 from pygments.lexers import guess_lexer
 from pygments.formatters import TerminalFormatter
 from colorama import Fore, Style
+from git_gopher.GitDataGetter import GitDataGetter
 import shutil
 
 class AddPreview:
-    def __init__(self, git_data_getter):
+    def __init__(self, git_data_getter: GitDataGetter):
         self._git_data_getter = git_data_getter
 
-    def preview(self, file_path):
+    def preview(self, file_path) -> str:
         formatter = TerminalFormatter()
 
         if isfile(file_path):
@@ -51,6 +52,6 @@ class AddPreview:
 
         return output
 
-    def get_horizontal_line(self):
+    def get_horizontal_line(self) -> str:
         terminal_width = shutil.get_terminal_size().columns
         return "\n" + Fore.YELLOW + (u'\u2500' * terminal_width) + Style.RESET_ALL + "\n"

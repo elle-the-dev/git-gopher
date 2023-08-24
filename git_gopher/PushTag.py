@@ -1,8 +1,10 @@
 from git_gopher.CommandInterface import CommandInterface
+from git_gopher.HistoryCommandRunner import HistoryCommandRunner
+from git_gopher.GitDataGetter import GitDataGetter
 
 class PushTag(CommandInterface):
-    def __init__(self, hist_command_runer, git_data_getter):
-        self._hist_command_runer = hist_command_runer
+    def __init__(self, hist_command_runner: HistoryCommandRunner, git_data_getter: GitDataGetter):
+        self._hist_command_runner = hist_command_runner
         self._git_data_getter = git_data_getter
 
     def run(self):
@@ -15,4 +17,4 @@ class PushTag(CommandInterface):
         tag = self._git_data_getter.get_local_tag_name(remote, preview='echo "git push -u ' + remote + ' {2}"')
 
         if tag:
-            return self._hist_command_runer.run(['git', 'push', '-u', remote, tag])
+            return self._hist_command_runner.run(['git', 'push', '-u', remote, tag])
