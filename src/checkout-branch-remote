@@ -3,8 +3,11 @@
 ## git checkout all branch
 
 checkout-branch-remote () {
-    target=$(get-branch-name "--all" 'echo "git checkout --track {2}"')
+    target=$(get-branch-name "--all" "source $DIR/_checkout-branch-remote-command {2}")
+
+    cmd=$("$DIR/_checkout-branch-remote-command" "$target")
+
     if [ -n "$target" ]; then
-        run-command "git checkout --track $target"
+        run-command "$cmd"
     fi
 }
