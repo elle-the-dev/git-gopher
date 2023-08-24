@@ -1,0 +1,7 @@
+#!/bin/bash
+
+## git merge tag
+target=$(gg-get-tag-name)
+if [ -n "$target" ]; then
+    git merge $(awk '{print $2}' <<<"$target" )
+fi

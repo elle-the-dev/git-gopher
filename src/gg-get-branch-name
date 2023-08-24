@@ -1,0 +1,14 @@
+#!/bin/bash
+
+branches=$(
+  git --no-pager branch $1 \
+    --format="%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)%1B[0;34;1mbranch%09%1B[m%(refname:short)%(end)%(end)" \
+  | sed '/^$/d') || exit
+target=$(
+  (echo "$branches";) |
+  fzf --no-hscroll --no-multi -n 2 \
+      --ansi --preview="git config branch.{2}.description" --preview-window down:5) || exit
+
+if [ -n "$target" ]; then
+    echo "$target"
+fi
