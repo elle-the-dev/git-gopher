@@ -10,6 +10,8 @@ gg-delete-branch                   | Delete a branch
 gg-delete-branch-force             | Force delete a branch
 gg-delete-tag                      | Delete a tag locally
 gg-delete-tag-remote               | Delete a tag both locally and on remote
+gg-reset                           | Unstage changes after the selected commit
+gg-reset-hard                      | Revert to the selected commit, discarding changes
 git commit -a                      | Commit all changes
 git log                            | Show the commit history
 git status                         | Show current branch details

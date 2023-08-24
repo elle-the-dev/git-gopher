@@ -32,6 +32,8 @@ remove_symlink gg-delete-branch
 remove_symlink gg-delete-branch-force
 remove_symlink gg-delete-tag
 remove_symlink gg-delete-tag-remote
+remove_symlink gg-reset
+remove_symlink gg-reset-hard
 
 if [ -d ~/.config/git-gud ]; then
     rm -rf ~/.config/git-gud

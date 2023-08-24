@@ -1,0 +1,6 @@
+#!/bin/bash
+
+log_entries=$(git log --pretty=oneline)
+log_entry=$(echo "$log_entries" | fzf --preview='echo "git reset {1}"' --preview-window down:5)
+hash=$(echo "$log_entry" | awk '{print $1}')
+git reset "$hash"
