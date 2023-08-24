@@ -12,6 +12,10 @@ By using `fzf` for these lists, finding and choosing which item can be done by f
 
 And unlike the git GUIs out there, **git-gopher** will say exactly what it's doing by displaying the command it will run before the selection is made.
 
+## What is this not?
+
+At present, **git-gopher** is not meant as a comprehensive git solution to include everything you'd ever want to do. Rather, it looks to streamline typical use-cases in a friendly, convenient manner, and allow custom additions to suit personal edge-cases.
+
 ## Requirements
 
 The following must be installed
