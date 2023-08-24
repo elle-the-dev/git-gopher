@@ -7,12 +7,4 @@ if [ -z "$tag" ]; then
     exit
 fi
 
-remotes=$(git remote -v | uniq)
-target=$(echo "$remotes" | grep push | fzf --preview="")
-
-if [ -z "$target" ]; then
-    exit
-fi
-
-remote=$(echo "$target" | awk '{print $1}')
-git push -u "$remote" "$tag"
+git tag -d "$tag"

@@ -14,9 +14,11 @@ remove_symlink gg-branch-tag
 remove_symlink gg-merge
 remove_symlink gg-merge-tag
 remove_symlink gg-merge-tag
-remove_symlink gg-delete
 remove_symlink gg-upstream-push
 remove_symlink gg-get-branch-name
 remove_symlink gg-get-tag-name
 remove_symlink gg-push-tag
+remove_symlink gg-delete-branch
+remove_symlink gg-delete-branch-force
+remove_symlink gg-delete-tag
 remove_symlink gg-delete-tag-remote
