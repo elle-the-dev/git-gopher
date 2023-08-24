@@ -17,6 +17,7 @@ And unlike the git GUIs out there, **git-gopher** will say exactly what it's doi
 The following must be installed
 
  - Python 3.5+
+ - Python module `colorama` (`pip3 install colorama`)
  - [git](https://github.com/git/git)
  - [fzf](https://github.com/junegunn/fzf)
 
