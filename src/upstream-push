@@ -1,0 +1,12 @@
+#!/bin/bash
+
+upstream-push () {
+    remotes=$(git remote -v | uniq)
+    branch=$(git rev-parse --abbrev-ref HEAD)
+    target=$(echo "$remotes" | grep push | fzf --preview="echo \"git push -u \"{1}\" \"$branch\"\"" --preview-window down:5)
+
+    if [ -n "$target" ]; then
+        remote=$(echo "$target" | awk '{print $1}')
+        run-command "git push -u $remote $branch"
+    fi
+}

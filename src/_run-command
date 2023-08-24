@@ -1,6 +1,6 @@
 #!/bin/bash
 
-run_command () {
+run-command () {
     config_dir=~/.config/git-gud
     if [ ! -d "$config_dir" ]; then
         mkdir "$config_dir"

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-SCRIPT=`realpath $0`
-DIR=`dirname $SCRIPT`
-source "$DIR/.run-command"
-
-hash=$(gg-get-commit-hash)
-run_command "git reset $hash"

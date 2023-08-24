@@ -30,7 +30,7 @@ To automatically configure, run
 sudo ./install.sh
 ```
 
-which will symlink the commands to `/usr/local/bin` and create `~/.config/git-gud`
+which will symlink the `gud` to `/usr/local/bin`
 
 To use a different install directory, pass it as the first argument to the command
 
@@ -46,31 +46,9 @@ sudo ./uninstall.sh
 
 To install manually without a script, add the project directory to `$PATH` and create `~/.config/git-gud`
 
-With or without the install script, to use the command aliases, the following definitions need to be added to `.bashrc`, `.zshrc` or whichever configuration file is appropriate for the Unix shell being used.
+### Updating
 
-```
-alias gg="gg-menu"
-alias ggc="gg-checkout-branch"
-alias ggcr="gg-checkout-branch-remote"
-alias ggct="gg-checkout-tag"
-alias ggbt="gg-branch-tag"
-alias ggm="gg-merge-branch"
-alias ggmt="gg-merge-tag"
-alias ggms="gg-merge-squash"
-alias ggup="gg-upstream-push"
-alias ggpt="gg-push-tag"
-alias ggd="gg-delete-branch"
-alias ggdf="gg-delete-branch-force"
-alias ggdt="gg-delete-tag"
-alias ggdtr="gg-delete-tag-remote"
-alias ggrs="gg-reset"
-alias ggrsh="gg-reset-hard"
-alias ggdi="gg-diff-commits"
-alias ggdit="gg-difftool-commits"
-alias ggdd="gg-difftool-commits-dir-diff"
-```
-
-_The aliases will apply to the next time the terminal is opened_
+To update `git-gud` simply pull the latest version. Since install creates a symlink, the updated repository will mean everything is up-to-date.
 
 ## Usage
 
@@ -78,11 +56,11 @@ _The aliases will apply to the next time the terminal is opened_
 
 ### Menu
 
-The `gg-menu` command (alias `gg`) will bring up a fzf list of all the commands that git-gud provides, as well as additional standard git commands.
+The `gud` command with no arguments will bring up a fzf list of all the commands that git-gud provides, as well as additional standard git commands.
 
 ![image](https://i.imgur.com/enbjTFo.png)
 
-Custom commands can be added to menu by creating `~/.gg-options` with the options listed in it, one per line, with the command and description separated by `|`.
+Custom commands can be added to menu by creating `~/.gud-options` with the options listed in it, one per line, with the command and description separated by `|`.
 
 Note: Commands cannot contain 2 consecutive spaces (`git log`: good, `git  log`: bad). The options are formatted using `column` and the two spaces are how the command column is delimited.
 
@@ -97,24 +75,24 @@ There are several commands added to make use of `fzf` and make interacting with 
 
 Commands will list out the available branches or tags in `fzf` as a fuzzy searchable menu rather than requiring that they be provided up front.
 
-| command                      | alias     | description                                                |
-| ---------------------------- | --------- | ---------------------------------------------------------- |
-| gg-menu                      | gg        | Open menu with these and other commands                    |
-| gg-checkout-branch           | ggc       | Checkout a local branch                                    |
-| gg-checkout-branch-remote    | ggcr      | Checkout a local or remote branch                          |
-| gg-checkout-tag              | ggct      | Checkout a tag                                             |
-| gg-branch-tag                | ggbt      | Create and checkout a new branch from a tag                |
-| gg-merge-branch              | ggm       | Merge a branch into the current branch                     |
-| gg-merge-tag                 | ggmt      | Merge a tag into the current branch                        |
-| gg-merge-squash              | ggms      | Merge and squash a branch into the current branch          |
-| gg-delete-branch             | ggd       | Delete a branch                                            |
-| gg-delete-branch-force       | ggdf      | Force delete a branch                                      |
-| gg-delete-tag                | ggdt      | Delete a tag locally                                       |
-| gg-delete-tag-remote         | ggdtr     | Delete a tag both locally and on remote                    |
-| gg-upstream-push             | ggup      | Push the current branch to remote, setting the upstream    |
-| gg-push-tag                  | ggpt      | Push a tag to a remote                                     |
-| gg-reset                     | ggrs      | Unstage changes after the selected commit                  |
-| gg-reset-hard                | ggrsh     | Revert to the selected commit, discarding changes          |
-| gg-diff-commits              | ggdi      | Select two commits and show the changes between them       |
-| gg-difftool-commits          | ggdit     | Select two commits and show the changes using difftool     |
-| gg-difftool-commits-dir-diff | ggdd      | Select two commits and show the changed files by directory |
+| command                       | alias   | description                                                |
+| ----------------------------- | --------| ---------------------------------------------------------- |
+| gud menu                      | gud     | Open menu with these and other commands                    |
+| gud checkout-branch           | gud c   | Checkout a local branch                                    |
+| gud checkout-branch-remote    | gud cr  | Checkout a local or remote branch                          |
+| gud checkout-tag              | gud ct  | Checkout a tag                                             |
+| gud branch-tag                | gud bt  | Create and checkout a new branch from a tag                |
+| gud merge-branch              | gud m   | Merge a branch into the current branch                     |
+| gud merge-tag                 | gud mt  | Merge a tag into the current branch                        |
+| gud merge-squash              | gud ms  | Merge and squash a branch into the current branch          |
+| gud delete-branch             | gud d   | Delete a branch                                            |
+| gud delete-branch-force       | gud df  | Force delete a branch                                      |
+| gud delete-tag                | gud dt  | Delete a tag locally                                       |
+| gud delete-tag-remote         | gud dtr | Delete a tag both locally and on remote                    |
+| gud upstream-push             | gud up  | Push the current branch to remote, setting the upstream    |
+| gud push-tag                  | gud pt  | Push a tag to a remote                                     |
+| gud reset                     | gud rs  | Unstage changes after the selected commit                  |
+| gud reset-hard                | gud rsh | Revert to the selected commit, discarding changes          |
+| gud diff-commits              | gud di  | Select two commits and show the changes between them       |
+| gud difftool-commits          | gud dit | Select two commits and show the changes using difftool     |
+| gud difftool-commits-dir-diff | gud dd  | Select two commits and show the changed files by directory |

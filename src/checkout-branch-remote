@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## git checkout all branch
+
+checkout-branch-remote () {
+    target=$(get-branch-name "--all" 'echo "git checkout {2}"')
+    if [ -n "$target" ]; then
+        run-command "git checkout $(awk '{print $2}' <<<$target )"
+    fi
+}

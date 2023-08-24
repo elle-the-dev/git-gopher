@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## git checkout local branch
+
+checkout-branch () {
+    target=$(get-branch-name "" 'echo "git checkout {2}"')
+    if [ -n "$target" ]; then
+        run-command "git checkout $(awk '{print $2}' <<<$target )"
+    fi
+}

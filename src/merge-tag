@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## git merge tag
+
+merge-tag () {
+    target=$(get-tag-name "" 'echo "git merge {2}"')
+    if [ -n "$target" ]; then
+        run-command "git merge $(awk '{print $2}' <<<$target )"
+    fi
+}
