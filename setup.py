@@ -63,7 +63,7 @@ setup(
     #
     # This field corresponds to the "Home-Page" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#home-page-optional
-    url='https://github.com/ellehamilton/git-gopher',  # Optional
+    url='https://github.com/elle-the-dev/git-gopher',  # Optional
 
     # This should be your name or the name of the organization which owns the
     # project.
@@ -172,6 +172,6 @@ setup(
     # maintainers, and where to support the project financially. The key is
     # what's used to render the link text on PyPI.
     project_urls={  # Optional
-        'Source': 'https://github.com/ellehamilton/git-gopher',
+        'Source': 'https://github.com/elle-the-dev/git-gopher',
     },
 )
