@@ -37,6 +37,7 @@ alias ggmt="gg-merge-tag"
 alias ggms="gg-merge-squash"
 alias ggd="gg-delete"
 alias ggup="git-upstream-push"
+alias ggdtr="git-delete-tag-remote"
 ```
 
 | command              | alias     | description                                              |
@@ -52,3 +53,4 @@ alias ggup="git-upstream-push"
 | gg-delete            | ggd       | Force delete a branch                                    |
 | gg-upstream-push     | ggup      | Push the current branch to remote, setting the upstream  |
 | gg-push-tag          | ggpt      | Push a tag to a remote                                   |
+| gg-delete-tag-remote | ggdtr     | Delete a tag both locally and on remote                  |
