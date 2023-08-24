@@ -18,6 +18,12 @@ And unlike the git GUIs out there, **git-gud** will say exactly what it's doing 
 
 ## Installation
 
+Clone the repository to a location where it can live in perpetuity.
+
+```
+git clone https://github.com/ellehamilton/git-gud.git
+```
+
 To automatically configure, run
 
 ```
