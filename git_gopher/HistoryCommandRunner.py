@@ -36,4 +36,4 @@ class HistoryCommandRunner:
         cmd_str = ' '.join(cmd)
 
         with open(config_dir + "/history", "a") as history:
-            history.write(date_str + "|" + cmd_str + "|" + branch + getcwd())
+            history.write(date_str + "|" + cmd_str + "|" + branch + "|" + getcwd() + "\n")
