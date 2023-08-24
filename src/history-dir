@@ -1,0 +1,11 @@
+#!/bin/bash
+
+history-dir () {
+    histfile=~/.config/git-gud/history
+    dir=$(pwd)
+    if [ -f "$histfile" ]; then
+        tac "$histfile" | grep "$dir$" | column -ts '|' | less
+    else
+        echo "No git-gud history found"
+    fi
+}

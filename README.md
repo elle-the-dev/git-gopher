@@ -81,25 +81,27 @@ Run any command or alias by passing it to the `gud` command
 gud [command|alias]
 ```
 
-| command                    | alias | description                                                |
-| -------------------------- | ----- | ---------------------------------------------------------- |
-| menu                       |       | Open menu with these and other commands                    |
-| checkout-branch            | c     | Checkout a local branch                                    |
-| checkout-branch-remote     | cr    | Checkout a local or remote branch                          |
-| checkout-tag               | ct    | Checkout a tag                                             |
-| branch-tag                 | bt    | Create and checkout a new branch from a tag                |
-| merge-branch               | m     | Merge a branch into the current branch                     |
-| merge-tag                  | mt    | Merge a tag into the current branch                        |
-| merge-squash               | ms    | Merge and squash a branch into the current branch          |
-| delete-branch              | d     | Delete a branch                                            |
-| delete-branch-force        | df    | Force delete a branch                                      |
-| delete-tag                 | dt    | Delete a tag locally                                       |
-| delete-tag-remote          | dtr   | Delete a tag both locally and on remote                    |
-| upstream-push              | up    | Push the current branch to remote, setting the upstream    |
-| push-tag                   | pt    | Push a tag to a remote                                     |
-| reset                      | rs    | Unstage changes after the selected commit                  |
-| reset-hard                 | rsh   | Revert to the selected commit, discarding changes          |
-| cherry-pick                | cp    | Merge specific commits into the current branch             |
-| diff-commits               | di    | Select two commits and show the changes between them       |
-| difftool-commits           | dit   | Select two commits and show the changes using difftool     |
-| difftool-commits-dir-diff  | dd    | Select two commits and show the changed files by directory |
+| command                    | alias | description                                                         |
+| -------------------------- | ----- | ------------------------------------------------------------------- |
+| menu                       |       | Open menu with these and other commands                             |
+| checkout-branch            | c     | Checkout a local branch                                             |
+| checkout-branch-remote     | cr    | Checkout a local or remote branch                                   |
+| checkout-tag               | ct    | Checkout a tag                                                      |
+| branch-tag                 | bt    | Create and checkout a new branch from a tag                         |
+| merge-branch               | m     | Merge a branch into the current branch                              |
+| merge-tag                  | mt    | Merge a tag into the current branch                                 |
+| merge-squash               | ms    | Merge and squash a branch into the current branch                   |
+| delete-branch              | d     | Delete a branch                                                     |
+| delete-branch-force        | df    | Force delete a branch                                               |
+| delete-tag                 | dt    | Delete a tag locally                                                |
+| delete-tag-remote          | dtr   | Delete a tag both locally and on remote                             |
+| upstream-push              | up    | Push the current branch to remote, setting the upstream             |
+| push-tag                   | pt    | Push a tag to a remote                                              |
+| reset                      | rs    | Unstage changes after the selected commit                           |
+| reset-hard                 | rsh   | Revert to the selected commit, discarding changes                   |
+| cherry-pick                | cp    | Merge specific commits into the current branch                      |
+| history                    | h     | Show the history of commands run                                    |
+| history-dir                | hd    | Show the history of commands run in the current working directory   |
+| diff-commits               | di    | Select two commits and show the changes between them                |
+| difftool-commits           | dit   | Select two commits and show the changes using difftool              |
+| difftool-commits-dir-diff  | dd    | Select two commits and show the changed files by directory          |
