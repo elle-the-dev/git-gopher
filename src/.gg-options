@@ -1,18 +1,20 @@
-gg-checkout-branch                  Checkout a local branch
-gg-checkout-branch-remote           Checkout a local or remote branch
-gg-checkout-tag                     Checkout a tag
-gg-merge-branch                     Merge a branch into the current branch
-gg-merge-tag                        Merge a tag into the current branch
-gg-merge-squash                     Merge and squash a branch into the current branch
-gg-upstream-push                    Push the current branch to remote, setting the upstream
-gg-push-tag                         Push a tag to remote
-gg-delete-branch                    Delete a branch
-gg-delete-branch-force              Force delete a branch
-gg-delete-tag                       Delete a tag locally
-gg-delete-tag-remote                Delete a tag both locally and on remote
-git log                             Show the commit history
-git rebase -i                       Interactive rebase
-git difftool --dir-diff             Open all changes in difftool
-diff --name-only --diff-filter=U    Show a list of filenames with conflicts
-git mergetool                       Open conflicts in mergetool
-git branch --edit-description       Edit branch description (appears in preview window for checkout and merge)
+gg-checkout-branch					Checkout a local branch
+gg-checkout-branch-remote			Checkout a local or remote branch
+gg-checkout-tag						Checkout a tag
+gg-merge-branch						Merge a branch into the current branch
+gg-merge-tag						Merge a tag into the current branch
+gg-merge-squash						Merge and squash a branch into the current branch
+gg-upstream-push					Push the current branch to remote, setting the upstream
+gg-push-tag							Push a tag to remote
+gg-delete-branch					Delete a branch
+gg-delete-branch-force				Force delete a branch
+gg-delete-tag						Delete a tag locally
+gg-delete-tag-remote				Delete a tag both locally and on remote
+git commit -a						Commit all changes
+git log								Show the commit history
+git status							Show current branch details
+git rebase -i						Interactive rebase
+git difftool --dir-diff				Open all changes in difftool
+diff --name-only --diff-filter=U	Show a list of filenames with conflicts
+git mergetool						Open conflicts in mergetool
+git branch --edit-description		Edit branch description (appears in preview window for checkout and merge)
