@@ -1,8 +1,8 @@
 from git_gopher.CommandInterface import CommandInterface
 
 class DifftoolCommits(CommandInterface):
-    def __init__(self, command_runner, git_data_getter):
-        self._command_runner = command_runner
+    def __init__(self, hist_command_runer, git_data_getter):
+        self._hist_command_runer = hist_command_runer
         self._git_data_getter = git_data_getter
 
     def run(self):
@@ -16,4 +16,4 @@ class DifftoolCommits(CommandInterface):
         if not commit2:
             return
 
-        self._command_runner.run_foreground(['git', 'difftool', commit1, commit2])
+        self._hist_command_runer.run_foreground(['git', 'difftool', commit1, commit2])
