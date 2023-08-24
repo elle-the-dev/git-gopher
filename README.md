@@ -94,12 +94,13 @@ gud [command|alias]
 | merge-tag                  | mt    | Merge a tag into the current branch                                 |
 | merge-squash               | ms    | Merge and squash a branch into the current branch                   |
 | fetch                      | f     | Retrieve repo information from selected remote                      |
+| track-remote               | tr    | Change which remote upstream to track                     |
+| upstream-push              | up    | Push the current branch to remote, setting the upstream             |
+| push-tag                   | pt    | Push a tag to a remote                                              |
 | delete-branch              | d     | Delete a branch                                                     |
 | delete-branch-force        | df    | Force delete a branch                                               |
 | delete-tag                 | dt    | Delete a tag locally                                                |
 | delete-tag-remote          | dtr   | Delete a tag both locally and on remote                             |
-| upstream-push              | up    | Push the current branch to remote, setting the upstream             |
-| push-tag                   | pt    | Push a tag to a remote                                              |
 | reset                      | rs    | Unstage changes after the selected commit                           |
 | reset-hard                 | rsh   | Revert to the selected commit, discarding changes                   |
 | cherry-pick                | cp    | Merge specific commits into the current branch                      |
