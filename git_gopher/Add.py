@@ -11,10 +11,11 @@ class Add(CommandInterface):
 
     def run(self):
         unstaged_files = self._get_unstaged_files()
-        filepath = self._get_user_selection(unstaged_files)
+        filepaths = self._get_user_selections(unstaged_files)
 
-        if filepath:
-            self._command_runner.run(['git', 'add', filepath])
+        if filepaths:
+            for filepath in filepaths:
+                self._command_runner.run(['git', 'add', filepath])
 
     def _get_unstaged_files(self):
         unstaged_files = self._git_data_getter.get_unstaged_files().splitlines()
@@ -55,10 +56,10 @@ class Add(CommandInterface):
 
         return unstaged_files
 
-    def _get_user_selection(self, unstaged_files):
+    def _get_user_selections(self, unstaged_files):
         format_columns = FormatColumns()
         preview = "ggo-add-preview {2}"
-        filepath = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(unstaged_files)), preview=preview, preview_window="--preview-window=right")
+        filepaths = self._fzf.run(format_columns.set_colors({0: Fore.BLUE}).format('\n'.join(unstaged_files)), preview=preview, preview_window="--preview-window=right", multi="--multi")
 
-        if (filepath):
-            return filepath.split('\t')[1].strip()
+        if (filepaths):
+            return list(map(lambda line: line.split('\t')[1].strip(), filepaths.splitlines()))

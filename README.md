@@ -75,6 +75,8 @@ Commands will list out the available branches or tags in `fzf` as a fuzzy search
 
 Run any command or alias by passing it to the `ggo` command
 
+For commands that support multiple selections, use `SHIFT+TAB` to mark each option.
+
 ```
 ggo [command|alias]
 ```

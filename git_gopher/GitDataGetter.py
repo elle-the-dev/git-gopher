@@ -13,13 +13,22 @@ class GitDataGetter:
         return check_output(['git', 'rev-parse', '--abbrev-ref', 'HEAD']).decode().strip().strip("'")
 
     def get_branch_name(self, options=[], preview="git config branch.{2}.description"):
+        return self._get_branches(options, preview, '--no-multi')
+
+    def get_branch_names(self, options=[], preview="git config branch.{2}.description"):
+        return self._get_branches(options, preview, '--multi')
+
+    def _get_branches(self, options, preview, multi):
         format_columns = FormatColumns()
         branches = check_output(['git', '--no-pager', 'branch', *options, '--format=%(if)%(HEAD)%(then)%(else)%(if:equals=HEAD)%(refname:strip=3)%(then)%(else)branch | %(refname:short)%(end)%(end)']).decode()
         branches = check_output(['sed', '/^$/d'], input=str.encode(format_columns.set_colors({0: Fore.BLUE}).format(branches)))
-        line = self._fzf.run(branches.decode(), preview=preview)
+        lines = self._fzf.run(branches.decode(), preview=preview, multi=multi)
 
-        if line:
-            return line.split('\t')[1].strip()
+        if lines:
+            if multi == '--multi':
+                return list(map(lambda line: line.split('\t')[1].strip(), lines.splitlines()))
+            else:
+                return lines.split('\t')[1].strip()
 
     def get_tag_name_from_tags(self, tags, options=[], preview=""):
         format_columns = FormatColumns()
