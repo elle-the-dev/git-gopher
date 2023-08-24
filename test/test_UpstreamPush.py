@@ -15,7 +15,7 @@ class TestUpstreamPush(unittest.TestCase):
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_current_branch_name = MagicMock(return_value=branch)
         git_data_getter.get_remote_name = MagicMock(return_value=remote)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         fetch = UpstreamPush(hist_command_runer, git_data_getter)

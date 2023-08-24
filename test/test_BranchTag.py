@@ -15,7 +15,7 @@ class TestBranchTag(unittest.TestCase):
         git_data_getter = GitDataGetter(Fzf(), command_runner)
         git_data_getter.get_tag_name = MagicMock(return_value=from_tag)
         git_data_getter.get_branch_name_from_input = MagicMock(return_value=new_branch_name)
-        
+
         hist_command_runer = HistoryCommandRunner(git_data_getter, command_runner)
         hist_command_runer.run = MagicMock()
         branch_branch = BranchTag(hist_command_runer, git_data_getter)
