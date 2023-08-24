@@ -35,7 +35,7 @@ pip3 install setuptools wheel
 Then we can install via pip
 
 ```
-pip3 install git_gopher
+pip3 install git-gopher
 ```
 
 Also, `$PATH` should contain the pip bin directory. That would look something like this in `.bashrc`, `.zshrc` or equivalent
