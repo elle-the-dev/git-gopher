@@ -6,6 +6,7 @@ gg-merge                            Merge a branch into the current branch
 gg-merge-tag                        Merge a tag into the current branch
 gg-merge-squash                     Merge and squash a branch into the current branch
 gg-upstream-push                    Push the current branch to remote, setting the upstream
+gg-push-tag                         Push a tag to remote
 git log                             Show the commit history
 git rebase -i                       Interactive rebase
 git difftool --dir-diff             Open all changes in difftool
