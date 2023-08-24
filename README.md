@@ -111,5 +111,5 @@ gud [command|alias]
 | stash-apply                | sta   | Apply the selected stash to the current branch                      |
 | stash-pop                  | stp   | Apply the selected stash to the current branch and delete the stash |
 | stash-message              | stm   | Stash changes with a message                                        |
-| stash-message              | stm   | Stash changes with a message                                        |
+| stash-drop                 | std   | Delete a stash
 | clear-cache                | clear | Delete the options cache so it will regenerate on next run          |
