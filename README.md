@@ -29,7 +29,7 @@ which will symlink the commands to `/usr/local/bin` and create `~/.config/git-gu
 To use a different install directory, pass it as the first argument to the command
 
 ```
-sudo ./install ~/.local/bin
+sudo ./install.sh ~/.local/bin
 ```
 
 An uninstall script is also provided to remove the symlinks. If a custom install path was provided, it will have been saved to `~/.config/git-gud/install-dir` and use that. Uninstalling will also delete `~/.config/git-gud`
