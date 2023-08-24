@@ -61,7 +61,7 @@ class GitDataGetter:
 
     def get_tag_name_remote(self, remote, options=[], preview=""):
         tags = self.get_remote_tags(remote)
-        return self.get_tag_name_from_tags(tags, options, preview)
+        return self.get_tag_name_from_tags('\n'.join(tags), options, preview)
 
     def get_local_tag_name(self, remote, options = [], preview=""):
         format_columns = FormatColumns()
