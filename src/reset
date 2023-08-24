@@ -1,9 +1,0 @@
-#!/bin/bash
-
-reset () {
-    hash=$(get-commit-hash "" "echo \"git reset {1} \"")
-
-    if [ -n "$hash" ]; then
-        run-command "git reset $hash"
-    fi
-}

@@ -14,43 +14,21 @@ And unlike the git GUIs out there, **git-gud** will say exactly what it's doing 
 
 ## Requirements
 
-[git](https://github.com/git/git) and [fzf](https://github.com/junegunn/fzf) must be installed.
+The following must be installed
+
+ - Python 3.5+
+ - [git](https://github.com/git/git)
+ - [fzf](https://github.com/junegunn/fzf)
 
 To use syntax highlighting in commands with preview windows like `stash-pop`, [bat](https://github.com/sharkdp/bat) is required.
 
 ## Installation
 
-Clone the repository to a location where it can live in perpetuity.
+Install via pip
 
 ```
-git clone https://github.com/ellehamilton/git-gud.git
+pip3 install gitgud
 ```
-
-To automatically configure, run
-
-```
-sudo ./install.sh
-```
-
-which will symlink the `gud` command to `/usr/local/bin`
-
-To use a different install directory, pass it as the first argument to the command
-
-```
-sudo ./install.sh ~/.local/bin
-```
-
-An uninstall script is also provided to remove any symlinks and files created. If a custom install path was provided, it will have been saved to `~/.config/git-gud/install-dir` and use that. Uninstalling will also delete `~/.config/git-gud`
-
-```
-sudo ./uninstall.sh
-```
-
-To install manually without a script, add the project directory to `$PATH` and create `~/.config/git-gud`
-
-### Updating
-
-To update `git-gud` simply pull the latest version. Since install creates a symlink, the updated repository will mean everything is up-to-date.
 
 ## Usage
 
@@ -116,4 +94,3 @@ gud [command|alias]
 | stash-pop                  | stp   | Apply the selected stash to the current branch and delete the stash |
 | stash-message              | stm   | Stash changes with a message                                        |
 | stash-drop                 | std   | Delete a stash
-| clear-cache                | clear | Delete the options cache so it will regenerate on next run          |

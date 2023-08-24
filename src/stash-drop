@@ -1,9 +1,0 @@
-#!/bin/bash
-
-stash-drop () {
-    stash=$(get-stash-ref "git stash drop {1}")
-
-    if [ -n "$stash" ]; then
-        git stash drop "$stash"
-    fi
-}

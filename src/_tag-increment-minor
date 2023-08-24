@@ -1,9 +1,0 @@
-#!/bin/bash
-
-tag-increment-minor () {
-    most_recent_tag=$(git describe --tags --abbrev=0)
-    major=$(echo "$most_recent_tag" | awk -F'.' '{print $1}')
-    minor=$(echo "$most_recent_tag" | awk -F'.' '{print $2}')
-    new_minor=$(($minor+1))
-    echo "$major.$new_minor.0"
-}
