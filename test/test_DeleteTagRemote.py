@@ -10,7 +10,7 @@ class TestDeleteTagRemote(unittest.TestCase):
 
     def test_run(self):
         remote = 'foo'
-        tag = 'v1.0.0'
+        tag = 'refs/tags/v1.0.0'
         tags = [tag]
         command_runner = CommandRunner()
         git_data_getter = GitDataGetter(Fzf(), command_runner)
@@ -22,7 +22,7 @@ class TestDeleteTagRemote(unittest.TestCase):
         delete_tag_remote = DeleteTagRemote(hist_command_runer, git_data_getter)
         delete_tag_remote.run()
 
-        calls = [call(['git', 'tag', '-d', tag]), call(['git', 'push', remote, ':refs/tags/' + tag])]
+        calls = [call(['git', 'tag', '-d', tag]), call(['git', 'push', '--delete', remote, tag])]
         hist_command_runer.run.assert_has_calls(calls)
 
 if __name__ == '__main__':
