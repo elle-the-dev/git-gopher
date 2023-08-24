@@ -17,4 +17,4 @@ git rebase -i                      | Interactive rebase
 git difftool --dir-diff            | Open all changes in difftool
 diff --name-only --diff-filter=U   | Show a list of filenames with conflicts
 git mergetool                      | Open conflicts in mergetool
-git branch --edit-description      | Edit branch description (appears in preview window for checkout and merge)
+git branch --edit-description      | Edit branch description
