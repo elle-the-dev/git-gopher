@@ -9,4 +9,4 @@ class MergeSquash(CommandInterface):
         branch = self._git_data_getter.get_branch_name(preview='echo "git merge --squash {2}"')
 
         if branch:
-            self._hist_command_runer.run(['git', 'merge', '--squash', branch])
+            return self._hist_command_runer.run(['git', 'merge', '--squash', branch])

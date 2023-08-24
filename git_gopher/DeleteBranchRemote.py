@@ -14,5 +14,7 @@ class DeleteBranchRemote(CommandInterface):
         branches = self._git_data_getter.get_branch_names_remote(remote, preview='echo "git branch -d {2}"')
 
         if branches:
+            output = ""
             for branch in branches:
-                self._command_runner.run(['git', 'push', remote, '--delete', branch])
+                output += self._command_runner.run(['git', 'push', remote, '--delete', branch])
+            return output
